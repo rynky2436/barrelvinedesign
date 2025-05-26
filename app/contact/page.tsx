@@ -3,7 +3,7 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Phone, Mail, MapPin } from "lucide-react"
+import { Phone, Mail, MapPin, Clock } from "lucide-react"
 
 export default function ContactPage() {
   return (
@@ -33,95 +33,106 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Contact Form Section */}
+      {/* Contact Section */}
       <section className="py-24 bg-stone-50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <div>
-              <h2 className="text-3xl font-bold text-stone-800 mb-8 font-playfair">Start Your Project</h2>
-              <form className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-stone-700 text-sm font-semibold mb-2">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    className="w-full px-4 py-3 border border-stone-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"
-                    placeholder="Your Name"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-stone-700 text-sm font-semibold mb-2">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    className="w-full px-4 py-3 border border-stone-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors"
-                    placeholder="Your Email"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-stone-700 text-sm font-semibold mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    rows={6}
-                    className="w-full px-4 py-3 border border-stone-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors resize-none"
-                    placeholder="Tell us about your project..."
-                  ></textarea>
-                </div>
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white text-lg py-4 font-semibold"
-                >
-                  Get Started
-                </Button>
-              </form>
-            </div>
+        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-stone-800 mb-4 font-playfair">Let's Discuss Your Project</h2>
+            <p className="text-xl text-stone-600">
+              Call us today to discuss your custom laser engraving needs and get a free consultation.
+            </p>
+          </div>
 
-            {/* Contact Information Card */}
-            <div>
-              <Card className="bg-white shadow-xl border-0 h-fit">
-                <CardContent className="p-8">
-                  <h2 className="text-2xl font-bold text-stone-800 mb-4 font-playfair">Ready to Get Started?</h2>
-                  <p className="text-stone-600 mb-8 leading-relaxed">
-                    Contact us today to discuss your project and get a free quote.
-                  </p>
+          <Card className="bg-white shadow-xl border-0 max-w-2xl mx-auto">
+            <CardContent className="p-12 text-center">
+              <h3 className="text-2xl font-bold text-stone-800 mb-6 font-playfair">Ready to Get Started?</h3>
+              <p className="text-stone-600 mb-8 leading-relaxed text-lg">
+                Contact us today to discuss your project and get a free quote. We're here to help bring your winery or
+                brewery's vision to life.
+              </p>
 
-                  <div className="space-y-4 mb-8">
-                    <div className="flex items-center space-x-3">
-                      <Mail className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                      <span className="text-stone-700">info@barrelvinedesigns.com</span>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <MapPin className="w-5 h-5 text-amber-600 flex-shrink-0" />
-                      <span className="text-stone-700">Washington, D.C. Metro</span>
-                    </div>
+              <div className="space-y-6 mb-10">
+                <div className="flex items-center justify-center space-x-4">
+                  <Phone className="w-6 h-6 text-amber-600 flex-shrink-0" />
+                  <span className="text-stone-700 text-lg font-medium">(301) 748-8360</span>
+                </div>
+                <div className="flex items-center justify-center space-x-4">
+                  <Mail className="w-6 h-6 text-amber-600 flex-shrink-0" />
+                  <span className="text-stone-700 text-lg">info@barrelvinedesigns.com</span>
+                </div>
+                <div className="flex items-center justify-center space-x-4">
+                  <MapPin className="w-6 h-6 text-amber-600 flex-shrink-0" />
+                  <span className="text-stone-700 text-lg">Washington, D.C. Metro</span>
+                </div>
+                <div className="flex items-center justify-center space-x-4">
+                  <Clock className="w-6 h-6 text-amber-600 flex-shrink-0" />
+                  <div className="text-stone-700 text-lg">
+                    <div>Mon-Fri: 9AM-6PM</div>
+                    <div>Sat: 10AM-4PM</div>
                   </div>
+                </div>
+              </div>
 
-                  <a href="tel:+13017488360" className="block">
-                    <Button
-                      size="lg"
-                      className="w-full bg-green-600 hover:bg-green-700 text-white text-lg py-4 font-semibold"
-                    >
-                      <Phone className="w-5 h-5 mr-2" />
-                      Call Now: (301) 748-8360
-                    </Button>
-                  </a>
-                </CardContent>
-              </Card>
-            </div>
+              <a href="tel:+13017488360" className="block">
+                <Button
+                  size="lg"
+                  className="w-full bg-green-600 hover:bg-green-700 text-white text-xl py-6 font-semibold"
+                >
+                  <Phone className="w-6 h-6 mr-3" />
+                  Call Now: (301) 748-8360
+                </Button>
+              </a>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Service Areas */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-stone-800 mb-4 font-playfair">Service Areas</h2>
+            <p className="text-xl text-stone-600 max-w-3xl mx-auto">
+              Proudly serving wineries and craft breweries throughout the DMV region
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 text-center">
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <CardContent className="p-8">
+                <div className="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white font-bold text-xl">DC</span>
+                </div>
+                <h3 className="text-xl font-bold text-stone-800 mb-2">Washington, D.C.</h3>
+                <p className="text-stone-600">Serving the nation's capital and surrounding areas</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <CardContent className="p-8">
+                <div className="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white font-bold text-xl">MD</span>
+                </div>
+                <h3 className="text-xl font-bold text-stone-800 mb-2">Maryland</h3>
+                <p className="text-stone-600">Throughout Maryland's wine and brewery regions</p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <CardContent className="p-8">
+                <div className="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-white font-bold text-xl">VA</span>
+                </div>
+                <h3 className="text-xl font-bold text-stone-800 mb-2">Virginia</h3>
+                <p className="text-stone-600">Across Virginia's renowned wine country</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* Additional Info Section */}
-      <section className="py-24 bg-white">
+      {/* How We Work Section */}
+      <section className="py-24 bg-stone-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-stone-800 mb-4 font-playfair">How We Work</h2>
@@ -136,7 +147,7 @@ export default function ContactPage() {
                 <span className="text-white font-bold text-xl">1</span>
               </div>
               <h3 className="text-lg font-bold text-stone-800 mb-2">Consultation</h3>
-              <p className="text-stone-600">We discuss your vision and requirements</p>
+              <p className="text-stone-600">We discuss your vision and requirements over the phone</p>
             </div>
 
             <div className="text-center">
@@ -144,7 +155,7 @@ export default function ContactPage() {
                 <span className="text-white font-bold text-xl">2</span>
               </div>
               <h3 className="text-lg font-bold text-stone-800 mb-2">Design</h3>
-              <p className="text-stone-600">Custom design creation and approval</p>
+              <p className="text-stone-600">Custom design creation and approval process</p>
             </div>
 
             <div className="text-center">
@@ -183,13 +194,16 @@ export default function ContactPage() {
                 Call Now
               </Button>
             </a>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:text-stone-800 text-lg px-8 py-4"
-            >
-              Schedule Consultation
-            </Button>
+            <a href="mailto:info@barrelvinedesigns.com">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white text-white hover:bg-white hover:text-stone-800 text-lg px-8 py-4"
+              >
+                <Mail className="w-5 h-5 mr-2" />
+                Send Email
+              </Button>
+            </a>
           </div>
         </div>
       </section>
