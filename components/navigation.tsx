@@ -14,9 +14,8 @@ export function Navigation() {
     { href: "/", label: "Home" },
     { href: "/winery", label: "Winery" },
     { href: "/microbrewery", label: "Microbrewery" },
-    { href: "/portfolio", label: "Portfolio" },
     { href: "/about", label: "About Us" },
-    { href: "/contact", label: "Contact" },
+    { href: "/contact", label: "Commission Work" },
   ]
 
   return (
@@ -56,7 +55,7 @@ export function Navigation() {
             <Link href="/contact">
               <Button className="bg-amber-600 hover:bg-amber-700 text-white">
                 <Phone className="w-4 h-4 mr-2" />
-                Call Now
+                Commission Now
               </Button>
             </Link>
           </div>
@@ -89,7 +88,7 @@ export function Navigation() {
                 <Link href="/contact">
                   <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white">
                     <Phone className="w-4 h-4 mr-2" />
-                    Call Now
+                    Commission Now
                   </Button>
                 </Link>
               </div>

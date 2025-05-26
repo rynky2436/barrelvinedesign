@@ -42,11 +42,11 @@ export default function ContactPage() {
 
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-6">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 font-playfair">
-            Get In
-            <span className="block text-amber-300">Touch</span>
+            Commission
+            <span className="block text-amber-300">Your Vision</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-stone-200 leading-relaxed">
-            Ready to start your custom laser engraving project? We'd love to hear from you.
+            Ready to commission your custom laser engraving project? We'd love to bring your vision to life.
           </p>
         </div>
       </section>
@@ -58,7 +58,7 @@ export default function ContactPage() {
             {/* Contact Form */}
             <Card className="border-0 shadow-xl">
               <CardContent className="p-8">
-                <h2 className="text-3xl font-bold text-stone-800 mb-6 font-playfair">Start Your Project</h2>
+                <h2 className="text-3xl font-bold text-stone-800 mb-6 font-playfair">Commission Your Project</h2>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
@@ -160,7 +160,7 @@ export default function ContactPage() {
                   </div>
 
                   <Button type="submit" className="w-full bg-amber-600 hover:bg-amber-700 text-lg py-3">
-                    Send Message
+                    Commission This Project
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </form>
@@ -215,14 +215,14 @@ export default function ContactPage() {
 
               <Card className="border-0 shadow-lg">
                 <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold text-stone-800 mb-6 font-playfair">Quick Response</h3>
+                  <h3 className="text-2xl font-bold text-stone-800 mb-6 font-playfair">Ready to Commission?</h3>
                   <p className="text-stone-600 mb-6 leading-relaxed">
-                    Need a quick quote or have an urgent project? Give us a call directly. We understand that timing is
-                    crucial in the wine and craft beer industry.
+                    Have a vision ready to bring to life or need an urgent project? Give us a call directly. We
+                    understand that timing is crucial in the wine and craft beer industry.
                   </p>
                   <Button className="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-semibold">
                     <Phone className="w-4 h-4 mr-2" />
-                    Call Now: (301) 748-8360
+                    Commission Now: (301) 748-8360
                   </Button>
                 </CardContent>
               </Card>

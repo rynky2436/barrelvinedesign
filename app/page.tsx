@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowRight, Award, Zap, Users, MapPin, Star } from "lucide-react"
+import { ArrowRight, Award, Zap, Users, MapPin } from "lucide-react"
 
 export default function HomePage() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -70,9 +70,9 @@ export default function HomePage() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Link href="/portfolio">
+            <Link href="/winery">
               <Button size="lg" className="bg-amber-600 hover:bg-amber-700 text-lg px-8 py-4">
-                View Our Craftsmanship
+                View Winery Solutions
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
             </Link>
@@ -81,7 +81,7 @@ export default function HomePage() {
                 size="lg"
                 className="bg-yellow-500 hover:bg-yellow-600 text-black text-lg px-8 py-4 font-semibold"
               >
-                Commission Your Next Project
+                Commission Your Project
               </Button>
             </Link>
           </div>
@@ -251,84 +251,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-24 bg-stone-50">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-stone-800 mb-4 font-playfair">What Our Clients Say</h2>
-            <p className="text-xl text-stone-600">Trusted by wineries and breweries across the DMV</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card className="border-0 shadow-lg">
-              <CardContent className="p-8">
-                <div className="flex mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
-                  ))}
-                </div>
-                <p className="text-stone-600 mb-6 italic">
-                  "The custom barrel heads they created for our tasting room are absolutely stunning. The craftsmanship
-                  is exceptional and really captures our brand's essence."
-                </p>
-                <div>
-                  <p className="font-semibold text-stone-800">Sarah Mitchell</p>
-                  <p className="text-stone-500">Owner, Blue Ridge Vineyard</p>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-0 shadow-lg">
-              <CardContent className="p-8">
-                <div className="flex mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
-                  ))}
-                </div>
-                <p className="text-stone-600 mb-6 italic">
-                  "Our custom tap handles are conversation starters! The attention to detail and quality of work
-                  exceeded our expectations. Highly recommend!"
-                </p>
-                <div>
-                  <p className="font-semibold text-stone-800">Mike Rodriguez</p>
-                  <p className="text-stone-500">Head Brewer, Capital City Brewing</p>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="border-0 shadow-lg">
-              <CardContent className="p-8">
-                <div className="flex mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
-                  ))}
-                </div>
-                <p className="text-stone-600 mb-6 italic">
-                  "Professional, creative, and delivered exactly what we envisioned. The engraved wine boxes have become
-                  a signature part of our brand."
-                </p>
-                <div>
-                  <p className="font-semibold text-stone-800">Jennifer Chen</p>
-                  <p className="text-stone-500">Marketing Director, Potomac Winery</p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-r from-amber-800 to-stone-800">
         <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-playfair">Ready to Elevate Your Brand?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-playfair">
+            Ready to Commission Your Vision?
+          </h2>
           <p className="text-xl text-amber-100 mb-8 leading-relaxed">
-            Let's discuss how our laser engraving expertise can enhance your winery or brewery's presence in the DMV
+            Let's discuss how our laser engraving expertise can bring your winery or brewery's vision to life in the DMV
             market.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
               <Button size="lg" className="bg-white text-stone-800 hover:bg-stone-100 text-lg px-8 py-4">
-                Get Your Custom Quote
+                Commission Your Project
               </Button>
             </Link>
             <Link href="/contact">

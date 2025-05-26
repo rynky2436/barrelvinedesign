@@ -211,7 +211,7 @@ export default function AboutPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-white text-stone-800 hover:bg-stone-100 text-lg px-8 py-4">
-              Contact Us Today
+              Commission Your Project
             </Button>
             <Button size="lg" className="bg-yellow-500 hover:bg-yellow-600 text-black text-lg px-8 py-4 font-semibold">
               Schedule a Call
