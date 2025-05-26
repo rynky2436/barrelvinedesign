@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 import { Phone, Mail, Clock } from "lucide-react"
 
 export function Footer() {
@@ -9,10 +10,12 @@ export function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <img
+              <Image
                 src="/images/barrel-vine-logo.png"
                 alt="Barrel & Vine Designs Logo"
-                className="h-16 w-16 filter brightness-0 invert"
+                width={64}
+                height={64}
+                className="filter brightness-0 invert"
               />
               <div>
                 <h3 className="text-2xl font-bold font-playfair text-amber-300">Barrel & Vine Designs</h3>

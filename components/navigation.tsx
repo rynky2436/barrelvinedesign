@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Menu, X, Phone } from "lucide-react"
@@ -24,10 +25,12 @@ export function Navigation() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
-            <img
+            <Image
               src="/images/barrel-vine-logo.png"
               alt="Barrel & Vine Designs Logo"
-              className="h-12 w-12 filter brightness-0 invert drop-shadow-md"
+              width={48}
+              height={48}
+              className="filter brightness-0 invert drop-shadow-md"
             />
             <div className="flex flex-col">
               <span className="text-xl font-bold text-white font-playfair text-shadow-md">Barrel & Vine Designs</span>

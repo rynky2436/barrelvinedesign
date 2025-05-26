@@ -1,157 +1,323 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent } from "@/components/ui/card"
+import { ArrowRight, Award, Wine, Gift, Users } from "lucide-react"
 
 export default function WineryPage() {
   return (
-    <div className="bg-gray-50">
+    <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="relative py-24 bg-white">
-        <div className="container mx-auto text-center">
-          <h1 className="text-5xl font-bold text-gray-900 mb-6">Crafting Exceptional Wineries</h1>
-          <p className="text-xl text-gray-700 mb-8">
-            Designing and building wineries that blend artistry with functionality.
+      <section className="relative py-24 bg-gradient-to-br from-purple-900 via-purple-800 to-purple-700">
+        <div className="absolute inset-0 opacity-20">
+          <Image src="/images/winery-solutions.png" alt="Winery Background" fill className="object-cover" />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/40" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center text-white">
+          <div className="mb-8">
+            <Image
+              src="/images/barrel-vine-logo.png"
+              alt="Barrel & Vine Designs Logo"
+              width={120}
+              height={120}
+              className="mx-auto filter brightness-0 invert mb-6"
+            />
+          </div>
+
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 font-playfair">Winery Solutions</h1>
+          <p className="text-xl md:text-2xl text-purple-200 mb-8 max-w-3xl mx-auto">
+            Premium Branding & Custom Laser Engraving for Distinguished Wineries
           </p>
-          <Link
-            href="/contact"
-            className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300"
-          >
-            Start Your Project
-          </Link>
-        </div>
-        <div className="absolute inset-0 overflow-hidden">
-          <Image
-            src="/images/winery-hero.jpg"
-            alt="Winery Interior"
-            layout="fill"
-            objectFit="cover"
-            className="opacity-20"
-          />
+          <p className="text-lg text-purple-100 mb-12 max-w-4xl mx-auto leading-relaxed">
+            Elevate your vintner's legacy with bespoke laser engraving that captures the essence of your terroir. From
+            elegant wine boxes to custom barrel heads, we craft pieces that reflect your winery's distinguished
+            heritage.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/contact">
+              <Button size="lg" className="bg-white text-purple-800 hover:bg-purple-50 text-lg px-8 py-4 font-semibold">
+                Start Your Project
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
+            <Link href="/contact">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white text-purple-800 bg-white hover:bg-purple-50 hover:text-purple-900 text-lg px-8 py-4"
+              >
+                Schedule Consultation
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section className="py-16">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-8">Our Expertise</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Service Card 1 */}
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <Image
-                src="/images/winery-design.jpg"
-                alt="Winery Design"
-                width={500}
-                height={300}
-                className="rounded-md mb-4"
-              />
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Winery Design</h3>
-              <p className="text-gray-700">Innovative and functional designs tailored to your specific needs.</p>
+      {/* Featured Products Grid */}
+      <section className="py-24 bg-stone-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-stone-800 mb-4 font-playfair">
+              Winery Product Showcase
+            </h2>
+            <p className="text-xl text-stone-600 max-w-3xl mx-auto">
+              Discover our premium laser engraving solutions designed specifically for wineries
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Custom Wine Boxes */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-0 overflow-hidden">
+              <div className="relative h-64">
+                <Image
+                  src="/images/winery-custom-wine-box.png"
+                  alt="Custom Wine Box"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-4 left-4 text-white">
+                  <Gift className="w-6 h-6 mb-2" />
+                  <h3 className="text-lg font-bold">Custom Wine Boxes</h3>
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <p className="text-stone-600 mb-4">
+                  Elegant wooden wine boxes with personalized laser engraving for special occasions and corporate gifts.
+                </p>
+                <Link href="/contact">
+                  <Button className="w-full bg-purple-700 hover:bg-purple-800">Get Started</Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* Barrel Heads */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-0 overflow-hidden">
+              <div className="relative h-64">
+                <Image
+                  src="/images/winery-barrel-head.png"
+                  alt="Barrel Head Engraving"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-4 left-4 text-white">
+                  <Wine className="w-6 h-6 mb-2" />
+                  <h3 className="text-lg font-bold">Barrel Head Engraving</h3>
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <p className="text-stone-600 mb-4">
+                  Transform wine barrel heads into stunning decorative pieces with custom logos and designs.
+                </p>
+                <Link href="/contact">
+                  <Button className="w-full bg-purple-700 hover:bg-purple-800">Get Started</Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* Cellar Door Signs */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-0 overflow-hidden">
+              <div className="relative h-64">
+                <Image
+                  src="/images/winery-cellar-door-sign.png"
+                  alt="Cellar Door Sign"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-4 left-4 text-white">
+                  <Award className="w-6 h-6 mb-2" />
+                  <h3 className="text-lg font-bold">Cellar Door Signs</h3>
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <p className="text-stone-600 mb-4">
+                  Professional signage for your tasting room and cellar door with elegant laser-engraved details.
+                </p>
+                <Link href="/contact">
+                  <Button className="w-full bg-purple-700 hover:bg-purple-800">Get Started</Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* Wine Accessories */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-0 overflow-hidden">
+              <div className="relative h-64">
+                <Image
+                  src="/images/winery-wine-accessories.png"
+                  alt="Wine Accessories"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-4 left-4 text-white">
+                  <Users className="w-6 h-6 mb-2" />
+                  <h3 className="text-lg font-bold">Wine Accessories</h3>
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <p className="text-stone-600 mb-4">
+                  Custom engraved wine accessories including bottle openers, stoppers, and serving tools.
+                </p>
+                <Link href="/contact">
+                  <Button className="w-full bg-purple-700 hover:bg-purple-800">Get Started</Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* Tasting Boards */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-0 overflow-hidden">
+              <div className="relative h-64">
+                <Image
+                  src="/images/winery-tasting-boards.png"
+                  alt="Tasting Boards"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-4 left-4 text-white">
+                  <Gift className="w-6 h-6 mb-2" />
+                  <h3 className="text-lg font-bold">Tasting Boards</h3>
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <p className="text-stone-600 mb-4">
+                  Elegant wooden tasting boards with custom engraving for wine flights and cheese pairings.
+                </p>
+                <Link href="/contact">
+                  <Button className="w-full bg-purple-700 hover:bg-purple-800">Get Started</Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* Luxury Gift Boxes */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-0 overflow-hidden">
+              <div className="relative h-64">
+                <Image
+                  src="/images/winery-luxury-gift-box.png"
+                  alt="Luxury Gift Box"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-4 left-4 text-white">
+                  <Award className="w-6 h-6 mb-2" />
+                  <h3 className="text-lg font-bold">Luxury Gift Boxes</h3>
+                </div>
+              </div>
+              <CardContent className="p-6">
+                <p className="text-stone-600 mb-4">
+                  Premium gift boxes with sophisticated laser engraving for special wine collections.
+                </p>
+                <Link href="/contact">
+                  <Button className="w-full bg-purple-700 hover:bg-purple-800">Get Started</Button>
+                </Link>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Overview */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <h2 className="text-4xl font-bold text-stone-800 mb-6 font-playfair">Winery Branding Excellence</h2>
+              <p className="text-lg text-stone-600 mb-8 leading-relaxed">
+                Our laser engraving services help wineries create distinctive brand experiences that resonate with wine
+                enthusiasts. From intimate tasting rooms to grand cellar doors, we craft pieces that tell your unique
+                story.
+              </p>
+
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-2 h-2 bg-purple-600 rounded-full mt-3 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold text-stone-800 mb-2">Custom Wine Box Engraving</h3>
+                    <p className="text-stone-600">
+                      Elegant wooden boxes with personalized designs for special releases and corporate gifts.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-2 h-2 bg-purple-600 rounded-full mt-3 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold text-stone-800 mb-2">Barrel Head Personalization</h3>
+                    <p className="text-stone-600">
+                      Transform used barrel heads into stunning wall art and decorative pieces.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-2 h-2 bg-purple-600 rounded-full mt-3 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold text-stone-800 mb-2">Tasting Room Signage & Décor</h3>
+                    <p className="text-stone-600">
+                      Professional signage and decorative elements that enhance your tasting room experience.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-2 h-2 bg-purple-600 rounded-full mt-3 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-semibold text-stone-800 mb-2">Award Displays & Plaques</h3>
+                    <p className="text-stone-600">
+                      Showcase your achievements with custom engraved award displays and recognition plaques.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* Service Card 2 */}
-            <div className="bg-white rounded-lg shadow-md p-6">
+            <div className="relative">
               <Image
-                src="/images/winery-construction.jpg"
-                alt="Winery Construction"
-                width={500}
-                height={300}
-                className="rounded-md mb-4"
+                src="/images/winery-wine-glasses.png"
+                alt="Wine Glasses"
+                width={600}
+                height={400}
+                className="rounded-lg shadow-xl"
               />
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Winery Construction</h3>
-              <p className="text-gray-700">Expert construction services ensuring quality and durability.</p>
-            </div>
-
-            {/* Service Card 3 */}
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <Image
-                src="/images/winery-renovation.jpg"
-                alt="Winery Renovation"
-                width={500}
-                height={300}
-                className="rounded-md mb-4"
-              />
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Winery Renovation</h3>
-              <p className="text-gray-700">Transforming existing spaces into modern and efficient wineries.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Product Showcase Section */}
-      <section className="py-16 bg-gray-100">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-semibold text-gray-900 mb-8">Explore Our Projects</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Product Card 1 */}
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <Image
-                src="/images/winery-project-1.jpg"
-                alt="Winery Project 1"
-                width={500}
-                height={300}
-                className="rounded-md mb-4"
-              />
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Vineyard Estate Winery</h3>
-              <p className="text-gray-700 mb-4">A stunning winery nestled in the heart of wine country.</p>
-              <Link
-                href="/contact"
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300"
+      {/* CTA Section */}
+      <section className="py-24 bg-gradient-to-r from-purple-800 to-purple-900">
+        <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-playfair">
+            Ready to Elevate Your Winery?
+          </h2>
+          <p className="text-xl text-purple-100 mb-8 leading-relaxed">
+            Let's create custom laser-engraved pieces that reflect the quality and heritage of your winery. Contact us
+            today to discuss your vision.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/contact">
+              <Button size="lg" className="bg-white text-purple-800 hover:bg-purple-50 text-lg px-8 py-4 font-semibold">
+                Start Your Project
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
+            <Link href="/contact">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white text-purple-800 bg-white hover:bg-purple-50 hover:text-purple-900 text-lg px-8 py-4"
               >
-                Get Started
-              </Link>
-            </div>
-
-            {/* Product Card 2 */}
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <Image
-                src="/images/winery-project-2.jpg"
-                alt="Winery Project 2"
-                width={500}
-                height={300}
-                className="rounded-md mb-4"
-              />
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Modern Cellar Winery</h3>
-              <p className="text-gray-700 mb-4">A contemporary winery with state-of-the-art facilities.</p>
-              <Link
-                href="/contact"
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300"
-              >
-                Get Started
-              </Link>
-            </div>
-
-            {/* Product Card 3 */}
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <Image
-                src="/images/winery-project-3.jpg"
-                alt="Winery Project 3"
-                width={500}
-                height={300}
-                className="rounded-md mb-4"
-              />
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Rustic Vineyard Winery</h3>
-              <p className="text-gray-700 mb-4">A charming winery with a rustic and inviting atmosphere.</p>
-              <Link
-                href="/contact"
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300"
-              >
-                Get Started
-              </Link>
-            </div>
+                Schedule Consultation
+              </Button>
+            </Link>
           </div>
-        </div>
-      </section>
-
-      {/* Call to Action Section */}
-      <section className="py-24 bg-red-100">
-        <div className="container mx-auto text-center">
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">Create Your Winery's Legacy</h2>
-          <p className="text-xl text-gray-700 mb-8">Let us help you build a winery that stands the test of time.</p>
-          <Link
-            href="/contact"
-            className="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300"
-          >
-            Get Started
-          </Link>
         </div>
       </section>
     </div>

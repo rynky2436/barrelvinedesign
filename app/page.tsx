@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { ArrowRight, Award, Zap, Users, MapPin } from "lucide-react"
@@ -43,17 +44,20 @@ export default function HomePage() {
       <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-amber-900 via-stone-900 to-amber-800">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-80">
-          <div className="absolute inset-0 bg-[url('/images/hero-background.png')] bg-cover bg-center" />
+          <Image src="/images/hero-background.png" alt="Hero Background" fill className="object-cover" priority />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/10 to-black/30" />
 
         <div className="relative z-10 text-center text-white max-w-5xl mx-auto px-6">
           {/* Prominent Logo */}
           <div className="mb-8">
-            <img
+            <Image
               src="/images/barrel-vine-logo.png"
               alt="Barrel & Vine Designs Logo"
-              className="h-32 w-32 md:h-40 md:w-40 mx-auto filter brightness-0 invert mb-6"
+              width={160}
+              height={160}
+              className="mx-auto filter brightness-0 invert mb-6"
+              priority
             />
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-4 font-playfair">Barrel & Vine Designs</h1>
             <p className="text-lg md:text-xl text-amber-300 mb-8">Custom Laser Engraving | Washington, D.C. Metro</p>
@@ -117,7 +121,7 @@ export default function HomePage() {
             {/* Winery Solutions */}
             <Card className="group hover:shadow-2xl transition-all duration-500 border-0 overflow-hidden">
               <div className="relative h-64 bg-gradient-to-br from-purple-900 to-purple-700">
-                <div className="absolute inset-0 bg-[url('/images/winery-solutions.png')] bg-cover bg-center" />
+                <Image src="/images/winery-solutions.png" alt="Winery Solutions" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className="absolute bottom-6 left-6 text-white">
                   <Award className="w-8 h-8 mb-2" />
@@ -161,7 +165,7 @@ export default function HomePage() {
             {/* Brewery Solutions */}
             <Card className="group hover:shadow-2xl transition-all duration-500 border-0 overflow-hidden">
               <div className="relative h-64 bg-gradient-to-br from-amber-800 to-amber-600">
-                <div className="absolute inset-0 bg-[url('/images/brewery-solutions.png')] bg-cover bg-center" />
+                <Image src="/images/brewery-solutions.png" alt="Brewery Solutions" fill className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 <div className="absolute bottom-6 left-6 text-white">
                   <Zap className="w-8 h-8 mb-2" />
@@ -206,7 +210,7 @@ export default function HomePage() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-24 bg-gradient-to-br from-amber-900 via-stone-900 to-amber-800">
+      <section className="py-24 bg-gradient-to-br from-amber-900 via-stone-900 to-amber-800 relative">
         <div className="absolute inset-0 bg-[url('/placeholder.svg?height=600&width=1200&query=dark+wood+workshop+tools')] bg-cover bg-center opacity-10" />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
