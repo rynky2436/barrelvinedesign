@@ -8,7 +8,7 @@ export default function MicrobreweryPage() {
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-amber-900 via-stone-900 to-amber-800">
-        <div className="absolute inset-0 bg-[url('/images/tap-handles-cropped.png')] bg-cover bg-center opacity-30" />
+        <div className="absolute inset-0 bg-[url('/images/tap-handles.png')] bg-cover bg-center opacity-30" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/60" />
 
         <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-6">
@@ -19,10 +19,12 @@ export default function MicrobreweryPage() {
           <p className="text-xl md:text-2xl mb-8 text-amber-100 leading-relaxed">
             Stand out in the competitive craft beer landscape with distinctive laser-engraved merchandise
           </p>
-          <Button size="lg" className="bg-amber-600 hover:bg-amber-700 text-lg px-8 py-4">
-            Commission Your Vision
-            <ArrowRight className="ml-2 w-5 h-5" />
-          </Button>
+          <Link href="/contact">
+            <Button size="lg" className="bg-amber-600 hover:bg-amber-700 text-lg px-8 py-4">
+              Commission Your Vision
+              <ArrowRight className="ml-2 w-5 h-5" />
+            </Button>
+          </Link>
         </div>
       </section>
 
@@ -44,7 +46,7 @@ export default function MicrobreweryPage() {
             <Card className="border-0 shadow-xl overflow-hidden group hover:shadow-2xl transition-all duration-300">
               <div className="relative overflow-hidden">
                 <img
-                  src="/images/tap-handles-cropped.png"
+                  src="/images/brewery-tap-handle.png"
                   alt="Custom Brewery Tap Handles with Laser Engraving"
                   className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -79,65 +81,69 @@ export default function MicrobreweryPage() {
                     Bar-ready installation
                   </div>
                 </div>
-                <Button className="w-full bg-amber-600 hover:bg-amber-700">
-                  Commission Tap Handles
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
+                <Link href="/contact">
+                  <Button className="w-full bg-amber-600 hover:bg-amber-700">
+                    Commission Tap Handles
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
 
-            {/* Unique Tap Handles */}
+            {/* Utensil Holders */}
             <Card className="border-0 shadow-xl overflow-hidden group hover:shadow-2xl transition-all duration-300">
               <div className="relative overflow-hidden">
                 <img
-                  src="/images/unique-tap-handles-cropped.png"
-                  alt="Premium Tap Handles in Unique Materials - Resin, Metal, Acrylic"
+                  src="/images/brewery-utensil-holder.png"
+                  alt="Custom Laser Engraved Utensil Holders for Brewery Taprooms"
                   className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute top-4 right-4">
-                  <div className="bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Premium</div>
+                  <div className="bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Functional</div>
                 </div>
               </div>
               <CardContent className="p-8">
                 <div className="flex items-center mb-4">
-                  <Zap className="w-6 h-6 text-amber-600 mr-3" />
-                  <h3 className="text-2xl font-bold text-stone-800 font-playfair">Premium Material Handles</h3>
+                  <Utensils className="w-6 h-6 text-amber-600 mr-3" />
+                  <h3 className="text-2xl font-bold text-stone-800 font-playfair">Taproom Utensil Holders</h3>
                 </div>
                 <p className="text-stone-600 mb-6 leading-relaxed">
-                  Eye-catching handles crafted from resin, metal, or acrylic that stand out from the competition and
-                  showcase your brewery's innovative spirit.
+                  Organize your taproom dining area with custom-engraved utensil holders that combine functionality with
+                  brand visibility. Perfect for food service areas and customer dining spaces.
                 </p>
                 <div className="grid md:grid-cols-2 gap-4 mb-6">
                   <div className="flex items-center text-sm text-stone-600">
                     <Star className="w-4 h-4 text-amber-500 mr-2" />
-                    Resin & acrylic options
+                    Custom logo engraving
                   </div>
                   <div className="flex items-center text-sm text-stone-600">
                     <Star className="w-4 h-4 text-amber-500 mr-2" />
-                    Metal accents available
+                    Food-safe materials
                   </div>
                   <div className="flex items-center text-sm text-stone-600">
                     <Star className="w-4 h-4 text-amber-500 mr-2" />
-                    LED integration ready
+                    Taproom organization
                   </div>
                   <div className="flex items-center text-sm text-stone-600">
                     <Star className="w-4 h-4 text-amber-500 mr-2" />
-                    Competition standout
+                    Brand reinforcement
                   </div>
                 </div>
-                <Button className="w-full bg-amber-600 hover:bg-amber-700">
-                  Commission Premium Handles
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
+                <Link href="/contact">
+                  <Button className="w-full bg-amber-600 hover:bg-amber-700">
+                    Commission Utensil Holders
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
 
-            {/* Flight Paddles */}
+            {/* Flight Glasses */}
             <Card className="border-0 shadow-xl overflow-hidden group hover:shadow-2xl transition-all duration-300">
               <div className="relative overflow-hidden">
                 <img
-                  src="/images/flight-paddles-cropped.png"
-                  alt="Custom Branded Beer Flight Paddles for Brewery Tastings"
+                  src="/images/brewery-flight-glasses.png"
+                  alt="Custom Branded Beer Flight Glasses for Brewery Tastings"
                   className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute top-4 right-4">
@@ -146,11 +152,11 @@ export default function MicrobreweryPage() {
               </div>
               <CardContent className="p-8">
                 <div className="flex items-center mb-4">
-                  <Utensils className="w-6 h-6 text-amber-600 mr-3" />
-                  <h3 className="text-2xl font-bold text-stone-800 font-playfair">Branded Flight Paddles</h3>
+                  <Users className="w-6 h-6 text-amber-600 mr-3" />
+                  <h3 className="text-2xl font-bold text-stone-800 font-playfair">Beer Flight Glasses</h3>
                 </div>
                 <p className="text-stone-600 mb-6 leading-relaxed">
-                  Elevate your tasting experience with custom flight paddles that showcase your brewery's attention to
+                  Elevate your tasting experience with custom flight glasses that showcase your brewery's attention to
                   detail and enhance customer engagement.
                 </p>
                 <div className="grid md:grid-cols-2 gap-4 mb-6">
@@ -171,10 +177,12 @@ export default function MicrobreweryPage() {
                     Tasting room ready
                   </div>
                 </div>
-                <Button className="w-full bg-amber-600 hover:bg-amber-700">
-                  Commission Flight Paddles
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
+                <Link href="/contact">
+                  <Button className="w-full bg-amber-600 hover:bg-amber-700">
+                    Commission Flight Glasses
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           </div>
@@ -184,7 +192,7 @@ export default function MicrobreweryPage() {
             <Card className="border-0 shadow-xl overflow-hidden group hover:shadow-2xl transition-all duration-300">
               <div className="relative overflow-hidden">
                 <img
-                  src="/images/growlers-cropped.png"
+                  src="/images/brewery-growler.png"
                   alt="Personalized Glass Growlers with Custom Brewery Engraving"
                   className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -219,10 +227,12 @@ export default function MicrobreweryPage() {
                     Customer retention
                   </div>
                 </div>
-                <Button className="w-full bg-amber-600 hover:bg-amber-700">
-                  Commission Growlers
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
+                <Link href="/contact">
+                  <Button className="w-full bg-amber-600 hover:bg-amber-700">
+                    Commission Growlers
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
 
@@ -230,7 +240,7 @@ export default function MicrobreweryPage() {
             <Card className="border-0 shadow-xl overflow-hidden group hover:shadow-2xl transition-all duration-300">
               <div className="relative overflow-hidden">
                 <img
-                  src="/images/growler-carriers-cropped.png"
+                  src="/images/brewery-growler-carrier.png"
                   alt="Custom Wooden Growler Carriers for Brewery Merchandise"
                   className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -267,56 +277,60 @@ export default function MicrobreweryPage() {
                     Customer convenience
                   </div>
                 </div>
-                <Button className="w-full bg-amber-600 hover:bg-amber-700">
-                  Commission Carriers
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
+                <Link href="/contact">
+                  <Button className="w-full bg-amber-600 hover:bg-amber-700">
+                    Commission Carriers
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
 
-            {/* Flight Glasses */}
+            {/* Event Tokens */}
             <Card className="border-0 shadow-xl overflow-hidden group hover:shadow-2xl transition-all duration-300">
               <div className="relative overflow-hidden">
                 <img
-                  src="/images/flight-glasses-cropped.png"
-                  alt="Custom Engraved Beer Flight Glasses for Craft Breweries"
+                  src="/images/brewery-event-token.png"
+                  alt="Custom Engraved Event Tokens for Brewery Promotions"
                   className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute top-4 right-4">
-                  <div className="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Tasting</div>
+                  <div className="bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold">Events</div>
                 </div>
               </div>
               <CardContent className="p-8">
                 <div className="flex items-center mb-4">
-                  <Users className="w-6 h-6 text-amber-600 mr-3" />
-                  <h3 className="text-2xl font-bold text-stone-800 font-playfair">Flight Glasses</h3>
+                  <Zap className="w-6 h-6 text-amber-600 mr-3" />
+                  <h3 className="text-2xl font-bold text-stone-800 font-playfair">Event Tokens</h3>
                 </div>
                 <p className="text-stone-600 mb-6 leading-relaxed">
-                  Serve beer samples in style with custom-engraved glasses that enhance craft brew presentations and
-                  create memorable tasting experiences.
+                  Custom-engraved promotional tokens that add a branded touch to special brewery events, festivals, and
+                  customer loyalty programs.
                 </p>
                 <div className="grid md:grid-cols-2 gap-4 mb-6">
                   <div className="flex items-center text-sm text-stone-600">
                     <Star className="w-4 h-4 text-amber-500 mr-2" />
-                    Professional presentation
+                    Event marketing
                   </div>
                   <div className="flex items-center text-sm text-stone-600">
                     <Star className="w-4 h-4 text-amber-500 mr-2" />
-                    Tasting room essential
+                    Customer loyalty
                   </div>
                   <div className="flex items-center text-sm text-stone-600">
                     <Star className="w-4 h-4 text-amber-500 mr-2" />
-                    Brand visibility
+                    Festival promotions
                   </div>
                   <div className="flex items-center text-sm text-stone-600">
                     <Star className="w-4 h-4 text-amber-500 mr-2" />
-                    Customer experience
+                    Collectible items
                   </div>
                 </div>
-                <Button className="w-full bg-amber-600 hover:bg-amber-700">
-                  Commission Flight Glasses
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
+                <Link href="/contact">
+                  <Button className="w-full bg-amber-600 hover:bg-amber-700">
+                    Commission Event Tokens
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           </div>
@@ -341,7 +355,7 @@ export default function MicrobreweryPage() {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
               <div className="relative overflow-hidden">
                 <img
-                  src="/images/chalkboard-beer-boards-cropped.png"
+                  src="/images/brewery-chalkboard-menu.png"
                   alt="Custom Chalkboard Beer Menu Boards for Taprooms"
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -354,10 +368,12 @@ export default function MicrobreweryPage() {
                 </p>
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-amber-600 font-semibold">Taproom Display</span>
-                  <Button size="sm" variant="ghost" className="text-amber-600 hover:text-amber-700">
-                    Commission
-                    <ArrowRight className="w-3 h-3 ml-1" />
-                  </Button>
+                  <Link href="/contact">
+                    <Button size="sm" variant="ghost" className="text-amber-600 hover:text-amber-700">
+                      Commission
+                      <ArrowRight className="w-3 h-3 ml-1" />
+                    </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
@@ -366,23 +382,25 @@ export default function MicrobreweryPage() {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
               <div className="relative overflow-hidden">
                 <img
-                  src="/images/taproom-atmosphere-decor-cropped.png"
-                  alt="Custom Taproom Wall Decor and Atmosphere Pieces"
+                  src="/images/brewery-taproom-sign.png"
+                  alt="Custom Taproom Signs for Craft Beer Establishments"
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <CardContent className="p-6">
-                <h3 className="text-lg font-bold text-stone-800 mb-2 font-playfair">Taproom Atmosphere Décor</h3>
+                <h3 className="text-lg font-bold text-stone-800 mb-2 font-playfair">Taproom Signage</h3>
                 <p className="text-stone-600 text-sm mb-4">
-                  Custom wall art and decorative pieces that create an authentic craft brewing atmosphere and brand
-                  immersion.
+                  Welcome guests with custom-engraved taproom signs that establish your brewery's atmosphere and brand
+                  identity.
                 </p>
                 <div className="flex items-center justify-between">
-                  <span className="text-xs text-amber-600 font-semibold">Brand Ambiance</span>
-                  <Button size="sm" variant="ghost" className="text-amber-600 hover:text-amber-700">
-                    Commission
-                    <ArrowRight className="w-3 h-3 ml-1" />
-                  </Button>
+                  <span className="text-xs text-amber-600 font-semibold">Brand Identity</span>
+                  <Link href="/contact">
+                    <Button size="sm" variant="ghost" className="text-amber-600 hover:text-amber-700">
+                      Commission
+                      <ArrowRight className="w-3 h-3 ml-1" />
+                    </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
@@ -391,23 +409,25 @@ export default function MicrobreweryPage() {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
               <div className="relative overflow-hidden">
                 <img
-                  src="/images/drink-tokens-cropped.png"
+                  src="/images/brewery-drink-token.png"
                   alt="Custom Wooden Drink Tokens for Brewery Events"
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <CardContent className="p-6">
-                <h3 className="text-lg font-bold text-stone-800 mb-2 font-playfair">Event Drink Tokens</h3>
+                <h3 className="text-lg font-bold text-stone-800 mb-2 font-playfair">Drink Tokens</h3>
                 <p className="text-stone-600 text-sm mb-4">
                   Reward customers with personalized drink tokens that add a branded touch to special brewery events and
                   festivals.
                 </p>
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-amber-600 font-semibold">Event Marketing</span>
-                  <Button size="sm" variant="ghost" className="text-amber-600 hover:text-amber-700">
-                    Commission
-                    <ArrowRight className="w-3 h-3 ml-1" />
-                  </Button>
+                  <Link href="/contact">
+                    <Button size="sm" variant="ghost" className="text-amber-600 hover:text-amber-700">
+                      Commission
+                      <ArrowRight className="w-3 h-3 ml-1" />
+                    </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
@@ -416,7 +436,7 @@ export default function MicrobreweryPage() {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
               <div className="relative overflow-hidden">
                 <img
-                  src="/images/bottle-openers-cropped.png"
+                  src="/images/brewery-bottle-opener.png"
                   alt="Custom Branded Bottle Openers for Brewery Promotions"
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -429,10 +449,12 @@ export default function MicrobreweryPage() {
                 </p>
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-amber-600 font-semibold">Promotional Items</span>
-                  <Button size="sm" variant="ghost" className="text-amber-600 hover:text-amber-700">
-                    Commission
-                    <ArrowRight className="w-3 h-3 ml-1" />
-                  </Button>
+                  <Link href="/contact">
+                    <Button size="sm" variant="ghost" className="text-amber-600 hover:text-amber-700">
+                      Commission
+                      <ArrowRight className="w-3 h-3 ml-1" />
+                    </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
@@ -441,7 +463,7 @@ export default function MicrobreweryPage() {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
               <div className="relative overflow-hidden">
                 <img
-                  src="/images/coasters-cropped.png"
+                  src="/images/brewery-slate-coaster.png"
                   alt="Custom Slate and Wooden Coasters with Brewery Logos"
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -454,10 +476,12 @@ export default function MicrobreweryPage() {
                 </p>
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-amber-600 font-semibold">Taproom Essentials</span>
-                  <Button size="sm" variant="ghost" className="text-amber-600 hover:text-amber-700">
-                    Commission
-                    <ArrowRight className="w-3 h-3 ml-1" />
-                  </Button>
+                  <Link href="/contact">
+                    <Button size="sm" variant="ghost" className="text-amber-600 hover:text-amber-700">
+                      Commission
+                      <ArrowRight className="w-3 h-3 ml-1" />
+                    </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
@@ -466,7 +490,7 @@ export default function MicrobreweryPage() {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
               <div className="relative overflow-hidden">
                 <img
-                  src="/images/serving-trays-cropped.png"
+                  src="/images/brewery-serving-tray.png"
                   alt="Custom Wooden Serving Trays for Brewery Hospitality"
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -479,10 +503,12 @@ export default function MicrobreweryPage() {
                 </p>
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-amber-600 font-semibold">Brewery Hospitality</span>
-                  <Button size="sm" variant="ghost" className="text-amber-600 hover:text-amber-700">
-                    Commission
-                    <ArrowRight className="w-3 h-3 ml-1" />
-                  </Button>
+                  <Link href="/contact">
+                    <Button size="sm" variant="ghost" className="text-amber-600 hover:text-amber-700">
+                      Commission
+                      <ArrowRight className="w-3 h-3 ml-1" />
+                    </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
@@ -491,7 +517,7 @@ export default function MicrobreweryPage() {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
               <div className="relative overflow-hidden">
                 <img
-                  src="/images/menu-boards-cropped.png"
+                  src="/images/brewery-menu-board.png"
                   alt="Custom Wooden Menu Boards for Craft Beer Establishments"
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -504,10 +530,12 @@ export default function MicrobreweryPage() {
                 </p>
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-amber-600 font-semibold">Information Display</span>
-                  <Button size="sm" variant="ghost" className="text-amber-600 hover:text-amber-700">
-                    Commission
-                    <ArrowRight className="w-3 h-3 ml-1" />
-                  </Button>
+                  <Link href="/contact">
+                    <Button size="sm" variant="ghost" className="text-amber-600 hover:text-amber-700">
+                      Commission
+                      <ArrowRight className="w-3 h-3 ml-1" />
+                    </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
@@ -516,7 +544,7 @@ export default function MicrobreweryPage() {
             <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden group">
               <div className="relative overflow-hidden">
                 <img
-                  src="/images/wine-beer-tags-cropped.png"
+                  src="/images/brewery-bottle-tag.png"
                   alt="Custom Laser Engraved Beer Bottle Tags for Special Releases"
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
@@ -529,10 +557,12 @@ export default function MicrobreweryPage() {
                 </p>
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-amber-600 font-semibold">Special Releases</span>
-                  <Button size="sm" variant="ghost" className="text-amber-600 hover:text-amber-700">
-                    Commission
-                    <ArrowRight className="w-3 h-3 ml-1" />
-                  </Button>
+                  <Link href="/contact">
+                    <Button size="sm" variant="ghost" className="text-amber-600 hover:text-amber-700">
+                      Commission
+                      <ArrowRight className="w-3 h-3 ml-1" />
+                    </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
@@ -693,7 +723,7 @@ export default function MicrobreweryPage() {
               </div>
             </div>
             <div className="bg-gradient-to-br from-amber-100 to-stone-100 p-8 rounded-lg">
-              <div className="bg-[url('/images/tap-handles-cropped.png')] bg-cover bg-center h-64 rounded-lg" />
+              <div className="bg-[url('/images/tap-handles.png')] bg-cover bg-center h-64 rounded-lg" />
             </div>
           </div>
         </div>

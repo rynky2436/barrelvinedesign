@@ -4,10 +4,11 @@ import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { Menu, X, Phone } from "lucide-react"
+import { Menu, X, Phone, Globe } from "lucide-react"
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isLangOpen, setIsLangOpen] = useState(false)
   const pathname = usePathname()
 
   const navItems = [
@@ -18,8 +19,17 @@ export function Navigation() {
     { href: "/contact", label: "Commission Work" },
   ]
 
+  const languages = [
+    { code: "en", name: "English", flag: "🇺🇸" },
+    { code: "es", name: "Español", flag: "🇪🇸" },
+    { code: "fr", name: "Français", flag: "🇫🇷" },
+    { code: "de", name: "Deutsch", flag: "🇩🇪" },
+    { code: "it", name: "Italiano", flag: "🇮🇹" },
+    { code: "pt", name: "Português", flag: "🇵🇹" },
+  ]
+
   return (
-    <nav className="fixed top-0 w-full bg-amber-900/95 backdrop-blur-md z-50 border-b border-amber-800/50">
+    <nav className="fixed top-0 w-full z-50 bg-amber-900/85 backdrop-blur-[20px] border-b border-white/10 shadow-lg transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
@@ -27,11 +37,11 @@ export function Navigation() {
             <img
               src="/images/barrel-vine-logo.png"
               alt="Barrel & Vine Designs Logo"
-              className="h-12 w-12 filter brightness-0 invert"
+              className="h-12 w-12 filter brightness-0 invert drop-shadow-md"
             />
             <div className="flex flex-col">
-              <span className="text-xl font-bold text-amber-100 font-playfair">Barrel & Vine Designs</span>
-              <span className="text-xs text-amber-300 -mt-1">Laser Engraving Excellence</span>
+              <span className="text-xl font-bold text-white font-playfair text-shadow-md">Barrel & Vine Designs</span>
+              <span className="text-xs text-amber-300 -mt-1 text-shadow-sm">Laser Engraving Excellence</span>
             </div>
           </Link>
 
@@ -41,8 +51,8 @@ export function Navigation() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`text-sm font-medium transition-colors hover:text-amber-300 ${
-                  pathname === item.href ? "text-amber-300" : "text-amber-100"
+                className={`text-sm font-medium transition-all duration-200 hover:text-amber-300 hover:bg-white/10 px-3 py-2 rounded-md text-shadow-sm ${
+                  pathname === item.href ? "text-amber-300 bg-white/10" : "text-white"
                 }`}
               >
                 {item.label}
@@ -50,10 +60,40 @@ export function Navigation() {
             ))}
           </div>
 
-          {/* Call Now Button */}
-          <div className="hidden md:block">
+          {/* Desktop Actions */}
+          <div className="hidden md:flex items-center space-x-4">
+            {/* Language Selector */}
+            <div className="relative">
+              <button
+                onClick={() => setIsLangOpen(!isLangOpen)}
+                className="flex items-center space-x-2 bg-white/10 border border-white/20 text-white px-3 py-2 rounded-md hover:bg-white/15 transition-all duration-200"
+              >
+                <Globe className="w-4 h-4" />
+                <span className="text-sm">EN</span>
+                <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <polyline points="6,9 12,15 18,9"></polyline>
+                </svg>
+              </button>
+
+              {isLangOpen && (
+                <div className="absolute top-full right-0 mt-2 bg-amber-900/95 backdrop-blur-md border border-white/10 rounded-md shadow-xl min-w-[150px] z-50">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      className="flex items-center space-x-2 w-full px-3 py-2 text-sm text-white hover:bg-white/10 transition-colors first:rounded-t-md last:rounded-b-md"
+                      onClick={() => setIsLangOpen(false)}
+                    >
+                      <span>{lang.flag}</span>
+                      <span>{lang.name}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Call Now Button */}
             <Link href="/contact">
-              <Button className="bg-amber-600 hover:bg-amber-700 text-white">
+              <Button className="bg-amber-600 hover:bg-amber-700 text-white shadow-lg">
                 <Phone className="w-4 h-4 mr-2" />
                 Commission Now
               </Button>
@@ -62,7 +102,7 @@ export function Navigation() {
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-amber-100 hover:text-amber-300">
+            <button onClick={() => setIsOpen(!isOpen)} className="text-white hover:text-amber-300 p-2">
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
@@ -70,20 +110,37 @@ export function Navigation() {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-amber-900/95 backdrop-blur-md">
+          <div className="md:hidden bg-amber-900/95 backdrop-blur-md border-t border-white/10">
+            <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`block px-3 py-2 text-base font-medium transition-colors hover:text-amber-300 ${
-                    pathname === item.href ? "text-amber-300" : "text-amber-100"
+                  className={`block px-3 py-2 text-base font-medium transition-colors hover:text-amber-300 hover:bg-white/10 rounded-md ${
+                    pathname === item.href ? "text-amber-300 bg-white/10" : "text-white"
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
                 </Link>
               ))}
+
+              {/* Mobile Language Selector */}
+              <div className="border-t border-white/10 pt-3 mt-3">
+                <div className="text-amber-300 font-semibold text-sm mb-2 px-3">Language</div>
+                <div className="grid grid-cols-3 gap-2 px-3">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      className="flex items-center justify-center space-x-1 bg-white/10 hover:bg-white/15 px-2 py-2 rounded-md text-white text-xs transition-colors"
+                    >
+                      <span>{lang.flag}</span>
+                      <span>{lang.code.toUpperCase()}</span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+
               <div className="px-3 py-2">
                 <Link href="/contact">
                   <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white">
