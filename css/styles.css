@@ -208,9 +208,9 @@ body {
 }
 
 .language-btn {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: var(--amber-100);
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--white);
   padding: var(--spacing-2) var(--spacing-3);
   border-radius: var(--radius-md);
   cursor: pointer;
@@ -222,17 +222,17 @@ body {
 }
 
 .language-btn:hover {
-  background: rgba(255, 255, 255, 0.15);
-  color: var(--amber-300);
+  background: rgba(255, 255, 255, 0.25);
+  color: var(--white);
 }
 
 .language-dropdown {
   position: absolute;
   top: 100%;
   right: 0;
-  background: rgba(146, 64, 14, 0.98);
+  background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-xl);
   min-width: 150px;
@@ -243,31 +243,25 @@ body {
   transition: all 0.3s ease;
 }
 
-.language-dropdown.active {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
 .language-option {
   display: flex;
   align-items: center;
   gap: var(--spacing-2);
   padding: var(--spacing-2) var(--spacing-3);
-  color: var(--amber-100);
+  color: var(--white);
   text-decoration: none;
   transition: var(--transition);
   font-size: 0.875rem;
 }
 
 .language-option:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--amber-300);
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--white);
 }
 
 .language-option.active {
-  background: rgba(255, 255, 255, 0.15);
-  color: var(--amber-300);
+  background: rgba(255, 255, 255, 0.25);
+  color: var(--white);
 }
 
 /* Navigation */
@@ -277,11 +271,11 @@ body {
   left: 0;
   right: 0;
   z-index: 50;
-  /* Enhanced semi-transparent background with better legibility */
-  background: rgba(146, 64, 14, 0.85);
+  /* Frosted glass effect - let background image show through */
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   /* Add subtle shadow for depth */
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
@@ -289,7 +283,7 @@ body {
 
 /* Enhanced navbar on scroll */
 .navbar.scrolled {
-  background: rgba(146, 64, 14, 0.95);
+  background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
@@ -431,10 +425,10 @@ body {
 .mobile-nav {
   display: none;
   padding: var(--spacing-2) 0 var(--spacing-3);
-  background: rgba(146, 64, 14, 0.95);
+  background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .mobile-nav.active {
