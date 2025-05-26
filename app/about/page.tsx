@@ -12,7 +12,7 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="relative py-24 bg-gradient-to-br from-stone-800 via-amber-900 to-stone-900">
         <div className="absolute inset-0 opacity-30">
-          <Image src="/images/hero-background.png" alt="Workshop Background" fill className="object-cover" />
+          <Image src="/images/about-hero.png" alt="Laser Engraving in Action" fill className="object-cover" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
 
@@ -29,11 +29,11 @@ export default function AboutPage() {
 
           <h1 className="text-4xl md:text-6xl font-bold mb-6 font-playfair">About Us</h1>
           <p className="text-xl md:text-2xl text-amber-200 mb-8 max-w-3xl mx-auto">
-            Crafting Excellence Through Precision & Passion
+            Celebrating Character & Craftsmanship
           </p>
           <p className="text-lg text-stone-200 mb-12 max-w-4xl mx-auto leading-relaxed">
-            Creating custom laser engraving solutions for wineries and breweries across the DMV region with artisanal
-            quality and unwavering attention to detail.
+            Your trusted partner for premium laser engraving services in the Washington, D.C. area, specializing in
+            custom solutions for craft beverage businesses.
           </p>
         </div>
       </section>
@@ -45,21 +45,29 @@ export default function AboutPage() {
             <div>
               <h2 className="text-4xl font-bold text-stone-800 mb-6 font-playfair">Our Story</h2>
               <p className="text-lg text-stone-600 mb-6 leading-relaxed">
-                We started as a small workshop with a passion for precision and a love for the craft. What began as a
-                fascination with the intersection of traditional craftsmanship and modern laser technology has evolved
-                into a trusted partnership with some of the finest wineries and breweries in the DMV region.
+                Welcome to Barrels & Vines Design, your trusted partner for premium laser engraving services in the
+                Washington, D.C. area. We specialize in creating custom, high-quality engraved products for
+                microbreweries, wineries, distilleries, and other craft-focused businesses looking to elevate their
+                brand.
+              </p>
+              <p className="text-lg text-stone-600 mb-6 leading-relaxed">
+                Our studio was founded with one simple mission: to celebrate the character and craftsmanship behind
+                every barrel, every vine, and every pour. From custom tap handles and engraved wine crates to branded
+                barware and promotional items, we help local and regional businesses bring their identity to life—one
+                beautifully engraved piece at a time.
               </p>
               <p className="text-lg text-stone-600 mb-8 leading-relaxed">
-                Over the years, we've honed our skills and expanded our capabilities, but our core mission remains
-                unchanged: to provide exceptional laser engraving services that honor the artistry and dedication of our
-                clients' craft.
+                At Barrels & Vines Design, we combine cutting-edge laser engraving technology with an artisan's touch.
+                Every project is crafted with precision, care, and a deep appreciation for the industries we serve.
+                Whether you're a small craft brewery, a boutique winery, or a startup distillery, we offer tailored
+                solutions that make your brand unforgettable.
               </p>
             </div>
 
             <div className="relative">
               <Image
-                src="/images/winery-custom-wine-box.png"
-                alt="Custom Wine Box"
+                src="/images/about-hero.png"
+                alt="Laser Engraving Process"
                 width={600}
                 height={400}
                 className="rounded-lg shadow-xl"
@@ -69,13 +77,13 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Values Section */}
+      {/* Our Mission Section */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-stone-800 mb-4 font-playfair">Our Values</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-stone-800 mb-4 font-playfair">Our Mission</h2>
             <p className="text-xl text-stone-600 max-w-3xl mx-auto">
-              The principles that guide every project and partnership
+              Supporting the vibrant craft beverage community with exceptional engraving services
             </p>
           </div>
 
@@ -85,10 +93,9 @@ export default function AboutPage() {
                 <div className="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                   <Target className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-stone-800 mb-4 font-playfair">Precision</h3>
+                <h3 className="text-xl font-bold text-stone-800 mb-4 font-playfair">Precision Craftsmanship</h3>
                 <p className="text-stone-600 leading-relaxed">
-                  We are committed to delivering accurate and flawless results every time, ensuring each piece meets the
-                  highest standards of quality and craftsmanship.
+                  Every project is crafted with precision, care, and a deep appreciation for the industries we serve.
                 </p>
               </CardContent>
             </Card>
@@ -98,10 +105,9 @@ export default function AboutPage() {
                 <div className="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                   <Award className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-stone-800 mb-4 font-playfair">Quality</h3>
+                <h3 className="text-xl font-bold text-stone-800 mb-4 font-playfair">Premium Quality</h3>
                 <p className="text-stone-600 leading-relaxed">
-                  We use only the finest materials and the latest laser technology to ensure superior quality that
-                  reflects the excellence of your brand.
+                  We combine cutting-edge laser engraving technology with an artisan's touch for superior results.
                 </p>
               </CardContent>
             </Card>
@@ -111,10 +117,9 @@ export default function AboutPage() {
                 <div className="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                   <Heart className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-stone-800 mb-4 font-playfair">Partnership</h3>
+                <h3 className="text-xl font-bold text-stone-800 mb-4 font-playfair">Creative Partnership</h3>
                 <p className="text-stone-600 leading-relaxed">
-                  We prioritize our clients' needs and strive to exceed expectations, building lasting relationships
-                  based on trust and mutual respect.
+                  You're getting a creative collaborator who understands your story and your audience.
                 </p>
               </CardContent>
             </Card>
@@ -122,14 +127,14 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Why Choose Us Section */}
+      {/* Regional Focus Section */}
       <section className="py-24 bg-gradient-to-br from-amber-900 via-stone-900 to-amber-800 relative">
-        <div className="absolute inset-0 bg-[url('/placeholder.svg?height=600&width=1200&query=dark+wood+workshop+tools')] bg-cover bg-center opacity-10" />
+        <div className="absolute inset-0 bg-[url('/images/hero-background.png')] bg-cover bg-center opacity-10" />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 font-playfair">Why Choose Us</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 font-playfair">Serving the DMV Region</h2>
             <p className="text-xl text-amber-200 max-w-3xl mx-auto">
-              What sets us apart in the world of custom laser engraving
+              Proud to support the vibrant beverage scene in Washington, D.C., Maryland, and Virginia
             </p>
           </div>
 
@@ -140,8 +145,7 @@ export default function AboutPage() {
               </div>
               <h3 className="text-xl font-bold text-white mb-4 font-playfair">Local Expertise</h3>
               <p className="text-amber-100 leading-relaxed">
-                Deep understanding of the DMV's wine and craft beer culture, serving Maryland, Virginia, and D.C. with
-                regional insight.
+                Deep understanding of the DMV's craft beverage culture and community needs.
               </p>
             </div>
 
@@ -149,10 +153,9 @@ export default function AboutPage() {
               <div className="w-20 h-20 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Zap className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-4 font-playfair">Cutting-Edge Technology</h3>
+              <h3 className="text-xl font-bold text-white mb-4 font-playfair">Tailored Solutions</h3>
               <p className="text-amber-100 leading-relaxed">
-                State-of-the-art laser engraving equipment combined with traditional craftsmanship techniques for
-                superior results.
+                Custom solutions for craft breweries, boutique wineries, and startup distilleries.
               </p>
             </div>
 
@@ -160,10 +163,9 @@ export default function AboutPage() {
               <div className="w-20 h-20 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                 <Users className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-4 font-playfair">Collaborative Approach</h3>
+              <h3 className="text-xl font-bold text-white mb-4 font-playfair">Brand Identity</h3>
               <p className="text-amber-100 leading-relaxed">
-                We work closely with you throughout the entire process, from initial concept to final delivery, ensuring
-                your vision comes to life.
+                Helping businesses bring their identity to life with beautifully engraved pieces.
               </p>
             </div>
           </div>
@@ -173,10 +175,10 @@ export default function AboutPage() {
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-r from-stone-800 to-amber-900">
         <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-playfair">Let's Create Together</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-playfair">Let's Create Something Bold</h2>
           <p className="text-xl text-amber-100 mb-8 leading-relaxed">
-            Ready to work with a team that understands your craft and shares your commitment to excellence? We'd love to
-            hear about your vision and bring it to life.
+            Ready to create something bold, beautiful, and uniquely yours? We'd love to collaborate with you and bring
+            your vision to life.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
