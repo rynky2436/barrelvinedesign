@@ -4,11 +4,10 @@ import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { Menu, X, Phone, Globe } from "lucide-react"
+import { Menu, X, Phone } from "lucide-react"
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
-  const [isLangOpen, setIsLangOpen] = useState(false)
   const pathname = usePathname()
 
   const navItems = [
@@ -17,15 +16,6 @@ export function Navigation() {
     { href: "/microbrewery", label: "Microbrewery" },
     { href: "/about", label: "About Us" },
     { href: "/contact", label: "Get Started" },
-  ]
-
-  const languages = [
-    { code: "en", name: "English", flag: "🇺🇸" },
-    { code: "es", name: "Español", flag: "🇪🇸" },
-    { code: "fr", name: "Français", flag: "🇫🇷" },
-    { code: "de", name: "Deutsch", flag: "🇩🇪" },
-    { code: "it", name: "Italiano", flag: "🇮🇹" },
-    { code: "pt", name: "Português", flag: "🇵🇹" },
   ]
 
   return (
@@ -62,35 +52,6 @@ export function Navigation() {
 
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
-            {/* Language Selector */}
-            <div className="relative">
-              <button
-                onClick={() => setIsLangOpen(!isLangOpen)}
-                className="flex items-center space-x-2 bg-white/10 border border-white/20 text-white px-3 py-2 rounded-md hover:bg-white/15 transition-all duration-200"
-              >
-                <Globe className="w-4 h-4" />
-                <span className="text-sm">EN</span>
-                <svg className="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <polyline points="6,9 12,15 18,9"></polyline>
-                </svg>
-              </button>
-
-              {isLangOpen && (
-                <div className="absolute top-full right-0 mt-2 bg-amber-900/95 backdrop-blur-md border border-white/10 rounded-md shadow-xl min-w-[150px] z-50">
-                  {languages.map((lang) => (
-                    <button
-                      key={lang.code}
-                      className="flex items-center space-x-2 w-full px-3 py-2 text-sm text-white hover:bg-white/10 transition-colors first:rounded-t-md last:rounded-b-md"
-                      onClick={() => setIsLangOpen(false)}
-                    >
-                      <span>{lang.flag}</span>
-                      <span>{lang.name}</span>
-                    </button>
-                  ))}
-                </div>
-              )}
-            </div>
-
             {/* Call Now Button */}
             <a href="tel:+13017488360">
               <Button className="bg-amber-600 hover:bg-amber-700 text-white shadow-lg">
@@ -124,22 +85,6 @@ export function Navigation() {
                   {item.label}
                 </Link>
               ))}
-
-              {/* Mobile Language Selector */}
-              <div className="border-t border-white/10 pt-3 mt-3">
-                <div className="text-amber-300 font-semibold text-sm mb-2 px-3">Language</div>
-                <div className="grid grid-cols-3 gap-2 px-3">
-                  {languages.map((lang) => (
-                    <button
-                      key={lang.code}
-                      className="flex items-center justify-center space-x-1 bg-white/10 hover:bg-white/15 px-2 py-2 rounded-md text-white text-xs transition-colors"
-                    >
-                      <span>{lang.flag}</span>
-                      <span>{lang.code.toUpperCase()}</span>
-                    </button>
-                  ))}
-                </div>
-              </div>
 
               <div className="px-3 py-2">
                 <a href="tel:+13017488360">
