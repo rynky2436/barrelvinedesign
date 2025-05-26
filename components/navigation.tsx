@@ -16,7 +16,7 @@ export function Navigation() {
     { href: "/winery", label: "Winery" },
     { href: "/microbrewery", label: "Microbrewery" },
     { href: "/about", label: "About Us" },
-    { href: "/contact", label: "Commission Work" },
+    { href: "/contact", label: "Get Started" },
   ]
 
   const languages = [
@@ -92,12 +92,12 @@ export function Navigation() {
             </div>
 
             {/* Call Now Button */}
-            <Link href="/contact">
+            <a href="tel:+13017488360">
               <Button className="bg-amber-600 hover:bg-amber-700 text-white shadow-lg">
                 <Phone className="w-4 h-4 mr-2" />
-                Commission Now
+                Call Now
               </Button>
-            </Link>
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -142,12 +142,12 @@ export function Navigation() {
               </div>
 
               <div className="px-3 py-2">
-                <Link href="/contact">
+                <a href="tel:+13017488360">
                   <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white">
                     <Phone className="w-4 h-4 mr-2" />
-                    Commission Now
+                    Call Now
                   </Button>
-                </Link>
+                </a>
               </div>
             </div>
           </div>

@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Phone, Mail, MapPin, Clock } from "lucide-react"
+import { Phone, Mail, Clock } from "lucide-react"
 
 export function Footer() {
   return (
@@ -57,7 +57,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/contact" className="text-stone-300 hover:text-amber-300 transition-colors">
-                  Commission Work
+                  Get Started
                 </Link>
               </li>
             </ul>
@@ -73,11 +73,7 @@ export function Footer() {
               </div>
               <div className="flex items-center">
                 <Mail className="w-4 h-4 text-amber-400 mr-3 flex-shrink-0" />
-                <span className="text-stone-300">info@barrelvinedesigns.com</span>
-              </div>
-              <div className="flex items-center">
-                <MapPin className="w-4 h-4 text-amber-400 mr-3 flex-shrink-0" />
-                <span className="text-stone-300">Washington, D.C. Metro</span>
+                <span className="text-stone-300">info@example.com</span>
               </div>
               <div className="flex items-center">
                 <Clock className="w-4 h-4 text-amber-400 mr-3 flex-shrink-0" />

@@ -81,7 +81,7 @@ export default function HomePage() {
                 size="lg"
                 className="bg-yellow-500 hover:bg-yellow-600 text-black text-lg px-8 py-4 font-semibold"
               >
-                Commission Your Project
+                Start Your Project
               </Button>
             </Link>
           </div>
@@ -254,9 +254,7 @@ export default function HomePage() {
       {/* CTA Section */}
       <section className="py-24 bg-gradient-to-r from-amber-800 to-stone-800">
         <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-playfair">
-            Ready to Commission Your Vision?
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-playfair">Ready to Start Your Project?</h2>
           <p className="text-xl text-amber-100 mb-8 leading-relaxed">
             Let's discuss how our laser engraving expertise can bring your winery or brewery's vision to life in the DMV
             market.
@@ -264,7 +262,7 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact">
               <Button size="lg" className="bg-white text-stone-800 hover:bg-stone-100 text-lg px-8 py-4">
-                Commission Your Project
+                Start Your Project
               </Button>
             </Link>
             <Link href="/contact">

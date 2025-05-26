@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://barrelvinedesigns.com",
   },
-    generator: 'v0.dev'
+  generator: "v0.dev",
 }
 
 const jsonLd = {
@@ -56,11 +56,10 @@ const jsonLd = {
     "Premium winery branding and microbrewery merchandise. Serving wineries and craft breweries across Maryland, Virginia, and Washington, D.C. with bespoke laser engraving services.",
   url: "https://barrelvinedesigns.com",
   telephone: "(301) 748-8360",
-  email: "info@barrelvinedesigns.com",
-  address: {
-    "@type": "PostalAddress",
-    addressRegion: "Washington, D.C. Metro",
-    addressCountry: "US",
+  email: "info@example.com",
+  areaServed: {
+    "@type": "Place",
+    name: "Washington, D.C. Metro Area",
   },
   geo: {
     "@type": "GeoCoordinates",
