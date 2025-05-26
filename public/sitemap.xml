@@ -1,28 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://barrelvinedesigns.com</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://barrelvinedesigns.com/images/hero-background.png</image:loc>
+      <image:title>Barrel & Vine Designs - Custom Laser Engraving Services</image:title>
+      <image:caption>Premium laser engraving for wineries and breweries</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://barrelvinedesigns.com/winery</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://barrelvinedesigns.com/images/winery-solutions.png</image:loc>
+      <image:title>Custom Wine Box Engraving Services</image:title>
+      <image:caption>Premium winery branding and custom laser engraving</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://barrelvinedesigns.com/microbrewery</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://barrelvinedesigns.com/images/brewery-solutions.png</image:loc>
+      <image:title>Custom Brewery Merchandise and Tap Handles</image:title>
+      <image:caption>Craft brewery branding and custom laser engraving</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://barrelvinedesigns.com/about</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://barrelvinedesigns.com/images/about-hero.png</image:loc>
+      <image:title>Laser Engraving Process and Craftsmanship</image:title>
+      <image:caption>Behind the scenes of our laser engraving services</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://barrelvinedesigns.com/contact</loc>

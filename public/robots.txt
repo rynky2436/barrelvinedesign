@@ -6,3 +6,16 @@ Sitemap: https://barrelvinedesigns.com/sitemap.xml
 
 # Crawl-delay
 Crawl-delay: 1
+
+# Block admin areas
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+
+# Allow important pages
+Allow: /
+Allow: /winery
+Allow: /microbrewery
+Allow: /about
+Allow: /contact
