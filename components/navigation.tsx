@@ -13,10 +13,9 @@ export function Navigation() {
 
   const navItems = [
     { href: "/", label: "Home" },
-    { href: "/winery", label: "Winery" },
-    { href: "/microbrewery", label: "Microbrewery" },
     { href: "/about", label: "About Us" },
     { href: "/contact", label: "Get Started" },
+    { href: "https://hubcitylaser.com", label: "General Laser Engraving", external: true },
   ]
 
   return (
@@ -40,17 +39,29 @@ export function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`text-sm font-medium transition-all duration-200 hover:text-amber-300 hover:bg-white/10 px-3 py-2 rounded-md text-shadow-sm ${
-                  pathname === item.href ? "text-amber-300 bg-white/10" : "text-white"
-                }`}
-              >
-                {item.label}
-              </Link>
-            ))}
+            {navItems.map((item) =>
+              item.external ? (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  target="_blank" // Open in new tab
+                  rel="noopener noreferrer" // Security best practice
+                  className="text-sm font-medium transition-all duration-200 hover:text-amber-300 hover:bg-white/10 px-3 py-2 rounded-md text-shadow-sm text-white"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`text-sm font-medium transition-all duration-200 hover:text-amber-300 hover:bg-white/10 px-3 py-2 rounded-md text-shadow-sm ${
+                    pathname === item.href ? "text-amber-300 bg-white/10" : "text-white"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              ),
+            )}
           </div>
 
           {/* Desktop Actions */}
@@ -76,18 +87,31 @@ export function Navigation() {
         {isOpen && (
           <div className="md:hidden bg-amber-900/95 backdrop-blur-md border-t border-white/10">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`block px-3 py-2 text-base font-medium transition-colors hover:text-amber-300 hover:bg-white/10 rounded-md ${
-                    pathname === item.href ? "text-amber-300 bg-white/10" : "text-white"
-                  }`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              ))}
+              {navItems.map((item) =>
+                item.external ? (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-3 py-2 text-base font-medium transition-colors hover:text-amber-300 hover:bg-white/10 rounded-md text-white"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={`block px-3 py-2 text-base font-medium transition-colors hover:text-amber-300 hover:bg-white/10 rounded-md ${
+                      pathname === item.href ? "text-amber-300 bg-white/10" : "text-white"
+                    }`}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ),
+              )}
 
               <div className="px-3 py-2">
                 <a href="tel:+13017488360">
