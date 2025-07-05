@@ -3,409 +3,309 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowRight, Award, Zap, Gift, Users, Wine } from "lucide-react"
+import { ArrowRight, Phone, Mail, MapPin, Zap, Award, Users, Palette } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Laser Engraving Services | Custom Wood & Metal Engraving | Barrel & Vine Designs",
+  title: "Laser Engraving Services for Wineries & Breweries | Barrel & Vine Designs",
   description:
-    "Professional laser engraving services in Washington DC, Maryland & Virginia. Custom wood engraving, metal engraving, acrylic cutting, and personalized gifts for businesses and individuals.",
+    "Professional laser engraving services in Washington DC, Maryland & Virginia. Custom wine boxes, tap handles, barrel heads, and brewery accessories. Call (240) 324-7110.",
   keywords:
-    "laser engraving services, custom wood engraving, metal laser engraving, acrylic cutting, personalized gifts, corporate branding, Washington DC laser engraving",
-  openGraph: {
-    title: "Professional Laser Engraving Services | Barrel & Vine Designs",
-    description:
-      "Expert laser engraving services for wood, metal, acrylic and more. Serving Washington DC, Maryland & Virginia with custom engraving solutions.",
-    images: [{ url: "/images/hero-background.png", width: 1200, height: 630, alt: "Laser Engraving Services" }],
-  },
-}
-
-const servicesSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  name: "Laser Engraving Services",
-  description: "Professional laser engraving services for wood, metal, acrylic and various materials",
-  provider: {
-    "@type": "LocalBusiness",
-    name: "Barrel & Vine Designs",
-  },
-  areaServed: ["Washington DC", "Maryland", "Virginia"],
-  serviceType: "Laser Engraving",
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Laser Engraving Services",
-    itemListElement: [
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Wood Laser Engraving",
-          description: "Custom laser engraving on various wood types including hardwoods and bamboo",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Metal Laser Engraving",
-          description: "Precision laser engraving on stainless steel, aluminum, and other metals",
-        },
-      },
-    ],
-  },
+    "laser engraving, custom wine boxes, tap handles, barrel heads, brewery accessories, winery products, Washington DC, Maryland, Virginia",
 }
 
 export default function ServicesPage() {
   return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }} />
-      <div className="min-h-screen pt-20">
-        {/* Hero Section */}
-        <section className="relative py-24 bg-gradient-to-br from-stone-800 via-amber-900 to-stone-900">
-          <div className="absolute inset-0 opacity-30">
-            <Image
-              src="/images/hero-background.png"
-              alt="Professional Laser Engraving Services"
-              fill
-              className="object-cover"
-              priority
-            />
+    <div className="min-h-screen pt-20">
+      {/* Hero Section */}
+      <section className="relative py-24 bg-gradient-to-br from-amber-900 via-amber-800 to-amber-700">
+        <div className="absolute inset-0 opacity-20">
+          <Image
+            src="/images/service-cards-layout.png"
+            alt="Laser Engraving Services"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/40" />
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center text-white">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 font-playfair">Professional Laser Engraving Services</h1>
+          <p className="text-xl md:text-2xl text-amber-200 mb-8 max-w-3xl mx-auto">
+            Elevate Your Winery & Brewery with Custom Laser-Engraved Products
+          </p>
+          <p className="text-lg text-amber-100 mb-12 max-w-4xl mx-auto leading-relaxed">
+            From elegant wine boxes to distinctive tap handles, we specialize in creating premium laser-engraved
+            products that enhance your brand and delight your customers throughout Washington DC, Maryland, and
+            Virginia.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/contact">
+              <Button size="lg" className="bg-white text-amber-800 hover:bg-amber-50 text-lg px-8 py-4 font-semibold">
+                Get Your Quote
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
+            <Link href="tel:+12403247110">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white text-white hover:bg-white hover:text-amber-800 text-lg px-8 py-4 font-semibold bg-transparent"
+              >
+                <Phone className="mr-2 w-5 h-5" />
+                Call (240) 324-7110
+              </Button>
+            </Link>
           </div>
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50" />
+        </div>
+      </section>
 
-          <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 text-center text-white">
-            <div className="mb-8">
-              <Image
-                src="/images/barrel-vine-logo.png"
-                alt="Barrel & Vine Designs Logo"
-                width={120}
-                height={120}
-                className="mx-auto filter brightness-0 invert mb-6"
-              />
-            </div>
-
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 font-playfair">Professional Laser Engraving Services</h1>
-            <p className="text-xl md:text-2xl text-amber-200 mb-8 max-w-3xl mx-auto">
-              Custom Wood, Metal & Acrylic Engraving in Washington DC, Maryland & Virginia
-            </p>
-            <p className="text-lg text-stone-200 mb-12 max-w-4xl mx-auto leading-relaxed">
-              From corporate branding to personalized gifts, we provide precision laser engraving services on a wide
-              variety of materials. Our state-of-the-art equipment and skilled craftsmen deliver exceptional results for
-              every project.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
-                <Button size="lg" className="bg-amber-600 hover:bg-amber-700 text-lg px-8 py-4 font-semibold">
-                  Get Free Quote
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </Link>
-              <Link href="/contact">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-stone-800 text-lg px-8 py-4 bg-transparent"
-                >
-                  View Portfolio
-                </Button>
-              </Link>
-            </div>
-          </div>
-        </section>
-
-        {/* Services Grid */}
-        <section className="py-24 bg-stone-50">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-stone-800 mb-4 font-playfair">
-                Our Laser Engraving Services
-              </h2>
-              <p className="text-xl text-stone-600 max-w-3xl mx-auto">
-                Comprehensive laser engraving solutions for businesses and individuals across the DMV region
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* Wood Engraving */}
-              <Card className="group hover:shadow-xl transition-all duration-300 border-0 overflow-hidden">
-                <div className="relative h-64">
-                  <Image
-                    src="/images/winery-custom-wine-box.png"
-                    alt="Wood Laser Engraving Services"
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <Gift className="w-6 h-6 mb-2" />
-                    <h3 className="text-lg font-bold">Wood Laser Engraving</h3>
-                  </div>
-                </div>
-                <CardContent className="p-6">
-                  <p className="text-stone-600 mb-4">
-                    Custom engraving on hardwoods, bamboo, plywood, and specialty woods. Perfect for signage, awards,
-                    and decorative pieces.
-                  </p>
-                  <ul className="text-sm text-stone-600 mb-4 space-y-1">
-                    <li>• Oak, maple, cherry, walnut</li>
-                    <li>• Bamboo and eco-friendly options</li>
-                    <li>• Custom cutting and shaping</li>
-                  </ul>
-                  <Link href="/contact">
-                    <Button className="w-full bg-amber-700 hover:bg-amber-800">Learn More</Button>
-                  </Link>
-                </CardContent>
-              </Card>
-
-              {/* Metal Engraving */}
-              <Card className="group hover:shadow-xl transition-all duration-300 border-0 overflow-hidden">
-                <div className="relative h-64">
-                  <Image
-                    src="/images/brewery-bottle-opener.png"
-                    alt="Metal Laser Engraving Services"
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <Award className="w-6 h-6 mb-2" />
-                    <h3 className="text-lg font-bold">Metal Laser Engraving</h3>
-                  </div>
-                </div>
-                <CardContent className="p-6">
-                  <p className="text-stone-600 mb-4">
-                    Precision engraving on stainless steel, aluminum, brass, and other metals for industrial and
-                    decorative applications.
-                  </p>
-                  <ul className="text-sm text-stone-600 mb-4 space-y-1">
-                    <li>• Stainless steel and aluminum</li>
-                    <li>• Brass and copper options</li>
-                    <li>• Industrial marking and tags</li>
-                  </ul>
-                  <Link href="/contact">
-                    <Button className="w-full bg-amber-700 hover:bg-amber-800">Learn More</Button>
-                  </Link>
-                </CardContent>
-              </Card>
-
-              {/* Acrylic Cutting */}
-              <Card className="group hover:shadow-xl transition-all duration-300 border-0 overflow-hidden">
-                <div className="relative h-64">
-                  <Image
-                    src="/images/brewery-menu-board.png"
-                    alt="Acrylic Laser Cutting Services"
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <Zap className="w-6 h-6 mb-2" />
-                    <h3 className="text-lg font-bold">Acrylic Laser Cutting</h3>
-                  </div>
-                </div>
-                <CardContent className="p-6">
-                  <p className="text-stone-600 mb-4">
-                    Precise cutting and engraving on acrylic sheets for signage, displays, and custom fabrication
-                    projects.
-                  </p>
-                  <ul className="text-sm text-stone-600 mb-4 space-y-1">
-                    <li>• Clear and colored acrylic</li>
-                    <li>• Custom shapes and designs</li>
-                    <li>• LED-compatible edge lighting</li>
-                  </ul>
-                  <Link href="/contact">
-                    <Button className="w-full bg-amber-700 hover:bg-amber-800">Learn More</Button>
-                  </Link>
-                </CardContent>
-              </Card>
-
-              {/* Corporate Branding */}
-              <Card className="group hover:shadow-xl transition-all duration-300 border-0 overflow-hidden">
-                <div className="relative h-64">
-                  <Image
-                    src="/images/winery-cellar-door-sign.png"
-                    alt="Corporate Branding Laser Engraving"
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <Users className="w-6 h-6 mb-2" />
-                    <h3 className="text-lg font-bold">Corporate Branding</h3>
-                  </div>
-                </div>
-                <CardContent className="p-6">
-                  <p className="text-stone-600 mb-4">
-                    Professional branding solutions including signage, awards, promotional items, and corporate gifts.
-                  </p>
-                  <ul className="text-sm text-stone-600 mb-4 space-y-1">
-                    <li>• Office signage and nameplates</li>
-                    <li>• Employee recognition awards</li>
-                    <li>• Promotional merchandise</li>
-                  </ul>
-                  <Link href="/contact">
-                    <Button className="w-full bg-amber-700 hover:bg-amber-800">Learn More</Button>
-                  </Link>
-                </CardContent>
-              </Card>
-
-              {/* Personalized Gifts */}
-              <Card className="group hover:shadow-xl transition-all duration-300 border-0 overflow-hidden">
-                <div className="relative h-64">
-                  <Image
-                    src="/images/custom-gift-boxes.png"
-                    alt="Personalized Gift Laser Engraving"
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <Gift className="w-6 h-6 mb-2" />
-                    <h3 className="text-lg font-bold">Personalized Gifts</h3>
-                  </div>
-                </div>
-                <CardContent className="p-6">
-                  <p className="text-stone-600 mb-4">
-                    Custom engraved gifts for weddings, anniversaries, graduations, and special occasions.
-                  </p>
-                  <ul className="text-sm text-stone-600 mb-4 space-y-1">
-                    <li>• Wedding and anniversary gifts</li>
-                    <li>• Photo engraving on wood</li>
-                    <li>• Custom jewelry boxes</li>
-                  </ul>
-                  <Link href="/contact">
-                    <Button className="w-full bg-amber-700 hover:bg-amber-800">Learn More</Button>
-                  </Link>
-                </CardContent>
-              </Card>
-
-              {/* Specialty Industries */}
-              <Card className="group hover:shadow-xl transition-all duration-300 border-0 overflow-hidden">
-                <div className="relative h-64">
-                  <Image
-                    src="/images/winery-solutions.png"
-                    alt="Specialty Industry Laser Engraving"
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <Wine className="w-6 h-6 mb-2" />
-                    <h3 className="text-lg font-bold">Specialty Industries</h3>
-                  </div>
-                </div>
-                <CardContent className="p-6">
-                  <p className="text-stone-600 mb-4">
-                    Specialized services for wineries, breweries, restaurants, and hospitality businesses.
-                  </p>
-                  <ul className="text-sm text-stone-600 mb-4 space-y-1">
-                    <li>• Wine and brewery merchandise</li>
-                    <li>• Restaurant menu boards</li>
-                    <li>• Hotel and hospitality signage</li>
-                  </ul>
-                  <div className="flex gap-2">
-                    <Link href="/winery" className="flex-1">
-                      <Button className="w-full bg-purple-700 hover:bg-purple-800 text-sm">Winery</Button>
-                    </Link>
-                    <Link href="/microbrewery" className="flex-1">
-                      <Button className="w-full bg-amber-700 hover:bg-amber-800 text-sm">Brewery</Button>
-                    </Link>
-                  </div>
-                  <div className="flex gap-2 mt-2">
-                    <Link href="/custom-wine-boxes" className="flex-1">
-                      <Button className="w-full bg-purple-600 hover:bg-purple-700 text-xs">Wine Boxes</Button>
-                    </Link>
-                    <Link href="/brewery-tap-handles" className="flex-1">
-                      <Button className="w-full bg-amber-600 hover:bg-amber-700 text-xs">Tap Handles</Button>
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {/* Materials Section */}
-        <section className="py-24 bg-white">
-          <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-stone-800 mb-4 font-playfair">
-                Materials We Work With
-              </h2>
-              <p className="text-xl text-stone-600 max-w-3xl mx-auto">
-                Our advanced laser engraving equipment can handle a wide variety of materials with precision and quality
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold">W</span>
-                </div>
-                <h3 className="font-bold text-stone-800 mb-2">Wood</h3>
-                <p className="text-sm text-stone-600">Hardwoods, softwoods, bamboo, plywood</p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold">M</span>
-                </div>
-                <h3 className="font-bold text-stone-800 mb-2">Metal</h3>
-                <p className="text-sm text-stone-600">Stainless steel, aluminum, brass, copper</p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold">A</span>
-                </div>
-                <h3 className="font-bold text-stone-800 mb-2">Acrylic</h3>
-                <p className="text-sm text-stone-600">Clear, colored, specialty acrylics</p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-white font-bold">+</span>
-                </div>
-                <h3 className="font-bold text-stone-800 mb-2">More</h3>
-                <p className="text-sm text-stone-600">Leather, fabric, glass, stone</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-24 bg-gradient-to-r from-amber-800 to-stone-800">
-          <div className="max-w-4xl mx-auto text-center px-6 lg:px-8">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-playfair">
-              Ready to Start Your Project?
+      {/* Service Categories */}
+      <section className="py-24 bg-stone-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-stone-800 mb-4 font-playfair">
+              Our Specialized Services
             </h2>
-            <p className="text-xl text-amber-100 mb-8 leading-relaxed">
-              Contact us today for a free consultation and quote. Our expert team is ready to bring your vision to life
-              with precision laser engraving.
+            <p className="text-xl text-stone-600 max-w-3xl mx-auto">
+              We offer comprehensive laser engraving solutions tailored specifically for wineries and breweries
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
-                <Button
-                  size="lg"
-                  className="bg-white text-stone-800 hover:bg-stone-100 text-lg px-8 py-4 font-semibold"
-                >
-                  Get Free Quote
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </Link>
-              <a href="tel:+13017488360">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-stone-800 text-lg px-8 py-4 bg-transparent"
-                >
-                  Call (301) 748-8360
-                </Button>
-              </a>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-12">
+            {/* Winery Services */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-0 overflow-hidden">
+              <div className="relative h-80">
+                <Image
+                  src="/images/winery-solutions.png"
+                  alt="Winery Laser Engraving Services"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                <div className="absolute bottom-6 left-6 text-white">
+                  <h3 className="text-2xl font-bold mb-2">Winery Solutions</h3>
+                  <p className="text-amber-200">Premium products for wine enthusiasts</p>
+                </div>
+              </div>
+              <CardContent className="p-8">
+                <ul className="space-y-3 text-stone-600 mb-6">
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-amber-600 rounded-full mr-3" />
+                    Custom Wine Boxes & Gift Sets
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-amber-600 rounded-full mr-3" />
+                    Wine Barrel Heads & Decorative Pieces
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-amber-600 rounded-full mr-3" />
+                    Cellar Door Signs & Branding
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-amber-600 rounded-full mr-3" />
+                    Tasting Room Accessories
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-amber-600 rounded-full mr-3" />
+                    Wine Accessories & Tools
+                  </li>
+                </ul>
+                <Link href="/winery">
+                  <Button className="w-full bg-amber-700 hover:bg-amber-800 text-white">
+                    Explore Winery Services
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+
+            {/* Brewery Services */}
+            <Card className="group hover:shadow-xl transition-all duration-300 border-0 overflow-hidden">
+              <div className="relative h-80">
+                <Image
+                  src="/images/brewery-solutions.png"
+                  alt="Brewery Laser Engraving Services"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                <div className="absolute bottom-6 left-6 text-white">
+                  <h3 className="text-2xl font-bold mb-2">Brewery Solutions</h3>
+                  <p className="text-amber-200">Distinctive products for craft breweries</p>
+                </div>
+              </div>
+              <CardContent className="p-8">
+                <ul className="space-y-3 text-stone-600 mb-6">
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-amber-600 rounded-full mr-3" />
+                    Custom Tap Handles & Beer Hardware
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-amber-600 rounded-full mr-3" />
+                    Growlers & Glassware Engraving
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-amber-600 rounded-full mr-3" />
+                    Taproom Signage & Decor
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-amber-600 rounded-full mr-3" />
+                    Flight Paddles & Serving Accessories
+                  </li>
+                  <li className="flex items-center">
+                    <div className="w-2 h-2 bg-amber-600 rounded-full mr-3" />
+                    Brewery Merchandise & Gifts
+                  </li>
+                </ul>
+                <Link href="/microbrewery">
+                  <Button className="w-full bg-amber-700 hover:bg-amber-800 text-white">
+                    Explore Brewery Services
+                    <ArrowRight className="ml-2 w-4 h-4" />
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-stone-800 mb-4 font-playfair">
+              Why Choose Barrel & Vine Designs?
+            </h2>
+            <p className="text-xl text-stone-600 max-w-3xl mx-auto">
+              We combine craftsmanship, technology, and industry expertise to deliver exceptional results
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Zap className="w-8 h-8 text-amber-700" />
+              </div>
+              <h3 className="text-xl font-bold text-stone-800 mb-2">Precision Technology</h3>
+              <p className="text-stone-600">
+                State-of-the-art laser engraving equipment ensures perfect detail and consistency in every piece.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Award className="w-8 h-8 text-amber-700" />
+              </div>
+              <h3 className="text-xl font-bold text-stone-800 mb-2">Industry Expertise</h3>
+              <p className="text-stone-600">
+                Deep understanding of winery and brewery needs, from branding to functionality requirements.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="w-8 h-8 text-amber-700" />
+              </div>
+              <h3 className="text-xl font-bold text-stone-800 mb-2">Personal Service</h3>
+              <p className="text-stone-600">
+                Dedicated support from concept to completion, ensuring your vision becomes reality.
+              </p>
+            </div>
+
+            <div className="text-center">
+              <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Palette className="w-8 h-8 text-amber-700" />
+              </div>
+              <h3 className="text-xl font-bold text-stone-800 mb-2">Custom Design</h3>
+              <p className="text-stone-600">
+                Tailored solutions that reflect your unique brand identity and aesthetic preferences.
+              </p>
             </div>
           </div>
-        </section>
-      </div>
-    </>
+        </div>
+      </section>
+
+      {/* Service Areas */}
+      <section className="py-24 bg-stone-50">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-stone-800 mb-4 font-playfair">
+              Serving the Greater DC Area
+            </h2>
+            <p className="text-xl text-stone-600 max-w-3xl mx-auto">
+              Professional laser engraving services throughout Washington DC, Maryland, and Virginia
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="text-center p-8 border-0 shadow-lg">
+              <MapPin className="w-12 h-12 text-amber-700 mx-auto mb-4" />
+              <h3 className="text-2xl font-bold text-stone-800 mb-2">Washington DC</h3>
+              <p className="text-stone-600">
+                Serving wineries, breweries, and businesses throughout the District of Columbia.
+              </p>
+            </Card>
+
+            <Card className="text-center p-8 border-0 shadow-lg">
+              <MapPin className="w-12 h-12 text-amber-700 mx-auto mb-4" />
+              <h3 className="text-2xl font-bold text-stone-800 mb-2">Maryland</h3>
+              <p className="text-stone-600">
+                Professional services for Maryland wineries and breweries, from Montgomery County to the Eastern Shore.
+              </p>
+            </Card>
+
+            <Card className="text-center p-8 border-0 shadow-lg">
+              <MapPin className="w-12 h-12 text-amber-700 mx-auto mb-4" />
+              <h3 className="text-2xl font-bold text-stone-800 mb-2">Virginia</h3>
+              <p className="text-stone-600">
+                Serving Northern Virginia's thriving wine and craft beer industry with premium engraving services.
+              </p>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact CTA */}
+      <section className="py-24 bg-gradient-to-br from-stone-800 to-stone-900">
+        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center text-white">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-playfair">Ready to Get Started?</h2>
+          <p className="text-xl text-stone-300 mb-8 max-w-2xl mx-auto">
+            Contact us today to discuss your laser engraving needs and receive a personalized quote for your project.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <Link href="/contact">
+              <Button size="lg" className="bg-amber-600 hover:bg-amber-700 text-white text-lg px-8 py-4 font-semibold">
+                Request Quote
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+            </Link>
+            <Link href="tel:+12403247110">
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white text-white hover:bg-white hover:text-stone-800 text-lg px-8 py-4 font-semibold bg-transparent"
+              >
+                <Phone className="mr-2 w-5 h-5" />
+                Call (240) 324-7110
+              </Button>
+            </Link>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-6 justify-center text-stone-300">
+            <div className="flex items-center">
+              <Mail className="w-5 h-5 mr-2" />
+              <span>info@barrelvinedesigns.com</span>
+            </div>
+            <div className="flex items-center">
+              <MapPin className="w-5 h-5 mr-2" />
+              <span>Washington DC Metro Area</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   )
 }

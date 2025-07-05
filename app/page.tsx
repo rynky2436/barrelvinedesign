@@ -221,7 +221,7 @@ export default function HomePage() {
 
       {/* Why Choose Us */}
       <section className="py-24 bg-gradient-to-br from-amber-900 via-stone-900 to-amber-800 relative">
-        <div className="absolute inset-0 bg-[url('/placeholder-kqo9m.png')] bg-cover bg-center opacity-10" />
+        <div className="absolute inset-0 bg-[url('/images/hero-background.png')] bg-cover bg-center opacity-10" />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 font-playfair">The Craftworks Difference</h2>

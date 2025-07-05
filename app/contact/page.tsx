@@ -5,15 +5,15 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Phone, Mail, Clock, MapPin, ArrowRight, Award, Users } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Contact Barrel & Vine Designs - Get Your Custom Laser Engraving Quote | (301) 748-8360",
+  title: "Contact Barrel & Vine Designs - Get Your Custom Laser Engraving Quote | (240) 324-7110",
   description:
-    "Contact Barrel & Vine Designs for custom laser engraving services in Washington DC, Maryland & Virginia. Call (301) 748-8360 for a free consultation and quote.",
+    "Contact Barrel & Vine Designs for custom laser engraving services in Washington DC, Maryland & Virginia. Call (240) 324-7110 for a free consultation and quote.",
   keywords:
     "contact laser engraving, custom engraving quote, laser engraving consultation, DMV laser engraving services",
   openGraph: {
     title: "Contact Barrel & Vine Designs - Get Your Custom Laser Engraving Quote",
     description:
-      "Contact Barrel & Vine Designs for custom laser engraving services in Washington DC, Maryland & Virginia. Call (301) 748-8360 for a free consultation.",
+      "Contact Barrel & Vine Designs for custom laser engraving services in Washington DC, Maryland & Virginia. Call (240) 324-7110 for a free consultation.",
     images: [{ url: "/images/hero-background.png", width: 1200, height: 630, alt: "Contact Barrel & Vine Designs" }],
   },
 }
@@ -24,7 +24,7 @@ const contactSchema = {
   mainEntity: {
     "@type": "LocalBusiness",
     name: "Barrel & Vine Designs",
-    telephone: "(301) 748-8360",
+    telephone: "(240) 324-7110",
     email: "info@barrelvinedesigns.com",
     address: {
       "@type": "PostalAddress",
@@ -95,10 +95,10 @@ export default function ContactPage() {
                   <h3 className="text-xl font-bold text-stone-800 mb-4 font-playfair">Call Us</h3>
                   <p className="text-stone-600 mb-4">Ready to discuss your project?</p>
                   <a
-                    href="tel:+13017488360"
+                    href="tel:+12403247110"
                     className="text-amber-700 hover:text-amber-800 font-semibold text-lg transition-colors"
                   >
-                    (301) 748-8360
+                    (240) 324-7110
                   </a>
                 </CardContent>
               </Card>
@@ -283,20 +283,20 @@ export default function ContactPage() {
               laser engraving expertise can elevate your brand.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="tel:+13017488360">
+              <a href="tel:+12403247110">
                 <Button
                   size="lg"
                   className="bg-white text-stone-800 hover:bg-stone-100 text-lg px-8 py-4 font-semibold"
                 >
                   <Phone className="mr-2 w-5 h-5" />
-                  Call (301) 748-8360
+                  Call (240) 324-7110
                 </Button>
               </a>
               <a href="mailto:info@barrelvinedesigns.com">
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-stone-800 text-lg px-8 py-4"
+                  className="border-white text-white hover:bg-white hover:text-stone-800 text-lg px-8 py-4 bg-transparent"
                 >
                   <Mail className="mr-2 w-5 h-5" />
                   Send Email

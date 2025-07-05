@@ -77,7 +77,7 @@ export default function CustomWineBoxesPage() {
             <p className="text-lg text-purple-100 mb-12 max-w-4xl mx-auto leading-relaxed">
               Create memorable gifts and lasting impressions with our custom laser engraved wine boxes. Perfect for
               weddings, anniversaries, corporate gifts, and special occasions. Each box is crafted from premium wood and
-              personalized with your unique design.
+              personalized with your personalized with your unique design.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

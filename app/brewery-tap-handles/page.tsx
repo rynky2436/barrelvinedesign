@@ -249,6 +249,7 @@ export default function BreweryTapHandlesPage() {
                     alt="Seasonal Rotating Tap Handles"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-4 text-white">
@@ -281,6 +282,7 @@ export default function BreweryTapHandlesPage() {
                     alt="Complete Branded Tap Handle Sets"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <div className="absolute bottom-4 left-4 text-white">
@@ -369,16 +371,16 @@ export default function BreweryTapHandlesPage() {
                   </div>
                 </div>
               </div>
+            </div>
 
-              <div className="relative">
-                <Image
-                  src="/images/brewery-tap-handle.png"
-                  alt="Custom Tap Handle Design Process"
-                  width={600}
-                  height={400}
-                  className="rounded-lg shadow-xl"
-                />
-              </div>
+            <div className="relative">
+              <Image
+                src="/images/brewery-tap-handle.png"
+                alt="Custom Tap Handle Design Process"
+                width={600}
+                height={400}
+                className="rounded-lg shadow-xl"
+              />
             </div>
           </div>
         </section>

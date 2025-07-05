@@ -30,7 +30,7 @@ const dcSchema = {
     addressRegion: "DC",
     addressCountry: "US",
   },
-  telephone: "(301) 748-8360",
+  telephone: "(240) 324-7110",
   areaServed: {
     "@type": "City",
     name: "Washington, D.C.",
@@ -84,13 +84,13 @@ export default function LaserEngravingWashingtonDCPage() {
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
-              <a href="tel:+13017488360">
+              <a href="tel:+12403247110">
                 <Button
                   size="lg"
                   variant="outline"
                   className="border-white text-white hover:bg-white hover:text-stone-800 text-lg px-8 py-4 bg-transparent"
                 >
-                  Call (301) 748-8360
+                  Call (240) 324-7110
                 </Button>
               </a>
             </div>
@@ -312,7 +312,7 @@ export default function LaserEngravingWashingtonDCPage() {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
                 <div className="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   <MapPin className="w-8 h-8 text-white" />
@@ -414,13 +414,13 @@ export default function LaserEngravingWashingtonDCPage() {
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
-              <a href="tel:+13017488360">
+              <a href="tel:+12403247110">
                 <Button
                   size="lg"
                   variant="outline"
                   className="border-white text-white hover:bg-white hover:text-stone-800 text-lg px-8 py-4 bg-transparent"
                 >
-                  Call (301) 748-8360
+                  Call (240) 324-7110
                 </Button>
               </a>
             </div>

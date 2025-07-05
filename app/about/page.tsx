@@ -191,7 +191,7 @@ export default function AboutPage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-stone-800 text-lg px-8 py-4"
+                className="border-white text-white hover:bg-white hover:text-stone-800 text-lg px-8 py-4 bg-transparent"
               >
                 Get a Quote
               </Button>
