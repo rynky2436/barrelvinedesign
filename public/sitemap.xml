@@ -13,6 +13,17 @@
     </image:image>
   </url>
   <url>
+    <loc>https://barrelvinedesigns.com/services</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://barrelvinedesigns.com/images/hero-background.png</image:loc>
+      <image:title>Professional Laser Engraving Services</image:title>
+      <image:caption>Custom wood, metal, and acrylic engraving services</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://barrelvinedesigns.com/winery</loc>
     <lastmod>2024-01-01</lastmod>
     <changefreq>monthly</changefreq>
@@ -32,6 +43,39 @@
       <image:loc>https://barrelvinedesigns.com/images/brewery-solutions.png</image:loc>
       <image:title>Custom Brewery Merchandise and Tap Handles</image:title>
       <image:caption>Craft brewery branding and custom laser engraving</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://barrelvinedesigns.com/custom-wine-boxes</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://barrelvinedesigns.com/images/winery-custom-wine-box.png</image:loc>
+      <image:title>Custom Wine Box Engraving</image:title>
+      <image:caption>Personalized wooden wine boxes with laser engraving</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://barrelvinedesigns.com/brewery-tap-handles</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://barrelvinedesigns.com/images/brewery-tap-handle.png</image:loc>
+      <image:title>Custom Brewery Tap Handles</image:title>
+      <image:caption>Professional tap handle manufacturing for craft breweries</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://barrelvinedesigns.com/laser-engraving-washington-dc</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://barrelvinedesigns.com/images/hero-background.png</image:loc>
+      <image:title>Laser Engraving Washington DC</image:title>
+      <image:caption>Professional laser engraving services in Washington DC</image:caption>
     </image:image>
   </url>
   <url>

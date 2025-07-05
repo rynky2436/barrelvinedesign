@@ -153,6 +153,11 @@ export default function HomePage() {
                     Award displays & plaques
                   </li>
                 </ul>
+                <div className="mt-4 pt-4 border-t border-stone-200">
+                  <Link href="/custom-wine-boxes" className="text-purple-700 hover:text-purple-800 text-sm font-medium">
+                    → View Custom Wine Boxes
+                  </Link>
+                </div>
                 <Link href="/winery">
                   <Button className="w-full bg-purple-700 hover:bg-purple-800">
                     Explore Winery Solutions
@@ -197,6 +202,11 @@ export default function HomePage() {
                     Promotional merchandise
                   </li>
                 </ul>
+                <div className="mt-4 pt-4 border-t border-stone-200">
+                  <Link href="/brewery-tap-handles" className="text-amber-700 hover:text-amber-800 text-sm font-medium">
+                    → View Custom Tap Handles
+                  </Link>
+                </div>
                 <Link href="/microbrewery">
                   <Button className="w-full bg-amber-700 hover:bg-amber-800">
                     Explore Brewery Solutions
@@ -211,7 +221,7 @@ export default function HomePage() {
 
       {/* Why Choose Us */}
       <section className="py-24 bg-gradient-to-br from-amber-900 via-stone-900 to-amber-800 relative">
-        <div className="absolute inset-0 bg-[url('/placeholder.svg?height=600&width=1200&query=dark+wood+workshop+tools')] bg-cover bg-center opacity-10" />
+        <div className="absolute inset-0 bg-[url('/placeholder-kqo9m.png')] bg-cover bg-center opacity-10" />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 font-playfair">The Craftworks Difference</h2>
