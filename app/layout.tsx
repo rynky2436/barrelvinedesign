@@ -1,17 +1,17 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter, Playfair_Display } from "next/font/google"
+import { Inter, Lora } from "next/font/google"
 import "./globals.css"
-import { Navigation } from "@/components/navigation"
-import { Footer } from "@/components/footer"
+import Navigation from "@/components/navigation"
+import Footer from "@/components/footer"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
-const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" })
+const lora = Lora({ subsets: ["latin"], weight: ["400", "700"], variable: "--font-lora" })
 
 export const metadata: Metadata = {
-  title: "Barrel & Vine Designs - Custom Laser Engraving for Wineries & Breweries",
+  title: "Barrel & Vine Designs - Custom Engraving for Wineries & Breweries",
   description:
-    "Premium laser engraving services for wineries and breweries in Washington DC, Maryland & Virginia. Custom wine boxes, tap handles, barrel heads, and more.",
+    "Specializing in custom laser engraved products for wineries and breweries, including wine boxes, barrel heads, tap handles, and signage.",
   keywords:
     "laser engraving, custom wine boxes, brewery tap handles, winery products, Washington DC, Maryland, Virginia",
   authors: [{ name: "Barrel & Vine Designs" }],
@@ -58,7 +58,7 @@ const jsonLd = {
   description:
     "Premium laser engraving services for wineries, breweries & distilleries in Washington DC, Maryland & Virginia. Custom wine boxes, tap handles, barrel heads & branded merchandise.",
   url: "https://barrelvinedesigns.com",
-  telephone: "(301) 748-8360",
+  telephone: "240-324-7110",
   email: "info@barrelvinedesigns.com",
   address: {
     "@type": "PostalAddress",
@@ -98,36 +98,6 @@ const jsonLd = {
   },
   sameAs: [],
   priceRange: "$$",
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "Laser Engraving Services",
-    itemListElement: [
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Custom Wine Box Engraving",
-          description: "Elegant wooden wine boxes with personalized laser engraving",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Brewery Tap Handles",
-          description: "Custom laser-engraved tap handles for craft breweries",
-        },
-      },
-      {
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: "Barrel Head Personalization",
-          description: "Transform wine barrel heads into custom decorative pieces",
-        },
-      },
-    ],
-  },
 }
 
 export default function RootLayout({
@@ -147,7 +117,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#92400e" />
         <meta name="google-site-verification" content="your-verification-code-here" />
       </head>
-      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
+      <body className={`${inter.variable} ${lora.variable} font-sans antialiased bg-gray-50 text-gray-800`}>
         <Navigation />
         <main>{children}</main>
         <Footer />
