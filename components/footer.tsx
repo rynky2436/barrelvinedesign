@@ -1,169 +1,140 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Phone, Mail, MapPin, Clock, Facebook, Instagram, Linkedin } from "lucide-react"
+import { Phone, Mail, MapPin } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="bg-gradient-to-br from-amber-900 via-amber-800 to-amber-900 text-white">
+    <footer className="bg-gray-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
-          <div className="space-y-4">
-            <div className="flex items-center space-x-3">
+          <div className="col-span-1 md:col-span-1">
+            <div className="flex items-center mb-4">
               <Image
                 src="/images/barrel-vine-logo.png"
-                alt="Barrel & Vine Designs Logo"
+                alt="Barrel & Vine Designs"
                 width={40}
                 height={40}
-                className="filter brightness-0 invert"
+                className="h-10 w-auto"
               />
-              <div>
-                <h3 className="text-lg font-bold font-playfair">Barrel & Vine Designs</h3>
-                <p className="text-amber-300 text-sm">Laser Engraving Excellence</p>
-              </div>
+              <span className="ml-2 text-xl font-bold text-amber-400">Barrel & Vine</span>
             </div>
-            <p className="text-amber-100 text-sm leading-relaxed">
-              Specializing in custom laser engraving for wineries and microbreweries. Creating unique, personalized
-              products that enhance your brand and customer experience.
+            <p className="text-gray-300 mb-4">
+              Premium laser engraving services for wineries, breweries, and distilleries in the Washington D.C. metro
+              area.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-amber-300 hover:text-white transition-colors">
-                <Facebook className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-amber-300 hover:text-white transition-colors">
-                <Instagram className="w-5 h-5" />
-              </a>
-              <a href="#" className="text-amber-300 hover:text-white transition-colors">
-                <Linkedin className="w-5 h-5" />
-              </a>
+            <div className="space-y-2">
+              <div className="flex items-center">
+                <Phone className="h-4 w-4 mr-2 text-amber-400" />
+                <span className="text-sm">(240) 324-7110</span>
+              </div>
+              <div className="flex items-center">
+                <Mail className="h-4 w-4 mr-2 text-amber-400" />
+                <span className="text-sm">info@barrelvinedesigns.com</span>
+              </div>
+              <div className="flex items-center">
+                <MapPin className="h-4 w-4 mr-2 text-amber-400" />
+                <span className="text-sm">Washington D.C. Metro Area</span>
+              </div>
             </div>
           </div>
 
-          {/* Services */}
+          {/* Winery Services */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-amber-300">Our Services</h4>
-            <ul className="space-y-2 text-sm">
+            <h3 className="text-lg font-semibold mb-4 text-amber-400">Winery Services</h3>
+            <ul className="space-y-2">
               <li>
-                <Link href="/services" className="text-amber-100 hover:text-white transition-colors">
-                  All Services
-                </Link>
-              </li>
-              <li>
-                <Link href="/winery" className="text-amber-100 hover:text-white transition-colors">
+                <Link href="/winery" className="text-gray-300 hover:text-white transition-colors">
                   Winery Solutions
                 </Link>
               </li>
               <li>
-                <Link href="/custom-wine-boxes" className="text-amber-100 hover:text-white transition-colors">
+                <Link href="/custom-wine-boxes" className="text-gray-300 hover:text-white transition-colors">
                   Custom Wine Boxes
                 </Link>
               </li>
               <li>
-                <Link href="/microbrewery" className="text-amber-100 hover:text-white transition-colors">
+                <Link href="/wine-barrel-heads" className="text-gray-300 hover:text-white transition-colors">
+                  Wine Barrel Heads
+                </Link>
+              </li>
+              <li>
+                <Link href="/cellar-door-signs" className="text-gray-300 hover:text-white transition-colors">
+                  Cellar Door Signs
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Brewery Services */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4 text-amber-400">Brewery Services</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/microbrewery" className="text-gray-300 hover:text-white transition-colors">
                   Brewery Solutions
                 </Link>
               </li>
               <li>
-                <Link href="/brewery-tap-handles" className="text-amber-100 hover:text-white transition-colors">
-                  Custom Tap Handles
+                <Link href="/brewery-tap-handles" className="text-gray-300 hover:text-white transition-colors">
+                  Tap Handles
+                </Link>
+              </li>
+              <li>
+                <Link href="/growlers-glassware" className="text-gray-300 hover:text-white transition-colors">
+                  Growlers & Glassware
+                </Link>
+              </li>
+              <li>
+                <Link href="/taproom-signage" className="text-gray-300 hover:text-white transition-colors">
+                  Taproom Signage
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Company Links */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4 text-amber-400">Company</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/about" className="text-gray-300 hover:text-white transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/services" className="text-gray-300 hover:text-white transition-colors">
+                  All Services
                 </Link>
               </li>
               <li>
                 <Link
                   href="/laser-engraving-washington-dc"
-                  className="text-amber-100 hover:text-white transition-colors"
+                  className="text-gray-300 hover:text-white transition-colors"
                 >
-                  DC Area Services
+                  Washington D.C. Services
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-gray-300 hover:text-white transition-colors">
+                  Contact Us
                 </Link>
               </li>
             </ul>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4 text-amber-300">Quick Links</h4>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <Link href="/" className="text-amber-100 hover:text-white transition-colors">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="text-amber-100 hover:text-white transition-colors">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-amber-100 hover:text-white transition-colors">
-                  Get Started
-                </Link>
-              </li>
-              <li>
-                <a
-                  href="https://hubcitylaser.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-amber-100 hover:text-white transition-colors"
-                >
-                  General Laser Engraving
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4 text-amber-300">Contact Us</h4>
-            <div className="space-y-3 text-sm">
-              <div className="flex items-start space-x-3">
-                <Phone className="w-4 h-4 text-amber-300 mt-0.5 flex-shrink-0" />
-                <div>
-                  <a href="tel:+12403247110" className="text-amber-100 hover:text-white transition-colors">
-                    (240) 324-7110
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <Mail className="w-4 h-4 text-amber-300 mt-0.5 flex-shrink-0" />
-                <div>
-                  <a
-                    href="mailto:info@barrelvinedesigns.com"
-                    className="text-amber-100 hover:text-white transition-colors"
-                  >
-                    info@barrelvinedesigns.com
-                  </a>
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <MapPin className="w-4 h-4 text-amber-300 mt-0.5 flex-shrink-0" />
-                <div className="text-amber-100">
-                  Serving Washington DC
-                  <br />
-                  Maryland & Virginia
-                </div>
-              </div>
-              <div className="flex items-start space-x-3">
-                <Clock className="w-4 h-4 text-amber-300 mt-0.5 flex-shrink-0" />
-                <div className="text-amber-100">
-                  Mon-Fri: 9AM-6PM
-                  <br />
-                  Weekend: By Appointment
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-amber-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-amber-200 text-sm">© 2024 Barrel & Vine Designs. All rights reserved.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0 text-sm">
-            <Link href="/privacy" className="text-amber-200 hover:text-white transition-colors">
-              Privacy Policy
-            </Link>
-            <Link href="/terms" className="text-amber-200 hover:text-white transition-colors">
-              Terms of Service
-            </Link>
+        <div className="border-t border-gray-800 mt-8 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-400 text-sm">© 2024 Barrel & Vine Designs. All rights reserved.</p>
+            <div className="flex space-x-6 mt-4 md:mt-0">
+              <Link href="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="/terms" className="text-gray-400 hover:text-white text-sm transition-colors">
+                Terms of Service
+              </Link>
+            </div>
           </div>
         </div>
       </div>

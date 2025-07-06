@@ -3,230 +3,251 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { usePathname } from "next/navigation"
-import { Button } from "@/components/ui/button"
-import { Menu, X, Phone, ChevronDown } from "lucide-react"
+import { Menu, X, ChevronDown } from "lucide-react"
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
-  const [wineryDropdown, setWineryDropdown] = useState(false)
-  const [breweryDropdown, setBreweryDropdown] = useState(false)
-  const pathname = usePathname()
-
-  const navItems = [
-    { href: "/", label: "Home" },
-    { href: "/services", label: "Services" },
-    {
-      href: "/winery",
-      label: "Winery",
-      dropdown: [
-        { href: "/winery", label: "Winery Solutions" },
-        { href: "/custom-wine-boxes", label: "Custom Wine Boxes" },
-        { href: "/wine-barrel-heads", label: "Wine Barrel Heads" },
-        { href: "/cellar-door-signs", label: "Cellar Door Signs" },
-      ],
-    },
-    {
-      href: "/microbrewery",
-      label: "Brewery",
-      dropdown: [
-        { href: "/microbrewery", label: "Brewery Solutions" },
-        { href: "/brewery-tap-handles", label: "Tap Handles" },
-        { href: "/growlers-glassware", label: "Growlers & Glassware" },
-        { href: "/taproom-signage", label: "Taproom Signage" },
-      ],
-    },
-    { href: "/about", label: "About Us" },
-    { href: "/contact", label: "Get Started" },
-    { href: "https://hubcitylaser.com", label: "General Laser Engraving", external: true },
-  ]
+  const [wineryOpen, setWineryOpen] = useState(false)
+  const [breweryOpen, setBreweryOpen] = useState(false)
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-white/10 backdrop-blur-md border-b border-white/20 shadow-lg transition-all duration-300">
+    <nav className="bg-white shadow-lg sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
-            <Image
-              src="/images/barrel-vine-logo.png"
-              alt="Barrel & Vine Designs Logo"
-              width={48}
-              height={48}
-              className="filter brightness-0 invert drop-shadow-md"
-            />
-            <div className="flex flex-col">
-              <span className="text-xl font-bold text-white font-playfair text-shadow-md">Barrel & Vine Designs</span>
-              <span className="text-xs text-amber-300 -mt-1 text-shadow-sm">Laser Engraving Excellence</span>
-            </div>
-          </Link>
+        <div className="flex justify-between h-16">
+          <div className="flex items-center">
+            <Link href="/" className="flex-shrink-0 flex items-center">
+              <Image
+                src="/images/barrel-vine-logo.png"
+                alt="Barrel & Vine Designs"
+                width={40}
+                height={40}
+                className="h-10 w-auto"
+              />
+              <span className="ml-2 text-xl font-bold text-amber-800">Barrel & Vine Designs</span>
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => {
-              if (item.external) {
-                return (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm font-medium transition-all duration-200 hover:text-amber-300 hover:bg-white/10 px-3 py-2 rounded-md text-shadow-sm text-white"
+            <Link
+              href="/"
+              className="text-gray-700 hover:text-amber-600 px-3 py-2 text-sm font-medium transition-colors"
+            >
+              Home
+            </Link>
+
+            {/* Winery Dropdown */}
+            <div className="relative group">
+              <button className="text-gray-700 hover:text-amber-600 px-3 py-2 text-sm font-medium transition-colors flex items-center">
+                Winery
+                <ChevronDown className="ml-1 h-4 w-4" />
+              </button>
+              <div className="absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="py-1">
+                  <Link
+                    href="/winery"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-amber-50 hover:text-amber-600"
                   >
-                    {item.label}
-                  </a>
-                )
-              }
-
-              if (item.dropdown) {
-                return (
-                  <div
-                    key={item.href}
-                    className="relative"
-                    onMouseEnter={() => {
-                      if (item.label === "Winery") setWineryDropdown(true)
-                      if (item.label === "Brewery") setBreweryDropdown(true)
-                    }}
-                    onMouseLeave={() => {
-                      if (item.label === "Winery") setWineryDropdown(false)
-                      if (item.label === "Brewery") setBreweryDropdown(false)
-                    }}
+                    Winery Solutions
+                  </Link>
+                  <Link
+                    href="/custom-wine-boxes"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-amber-50 hover:text-amber-600"
                   >
-                    <Link
-                      href={item.href}
-                      className={`flex items-center text-sm font-medium transition-all duration-200 hover:text-amber-300 hover:bg-white/10 px-3 py-2 rounded-md text-shadow-sm ${
-                        pathname === item.href || item.dropdown.some((sub) => pathname === sub.href)
-                          ? "text-amber-300 bg-white/10"
-                          : "text-white"
-                      }`}
-                    >
-                      {item.label}
-                      <ChevronDown className="w-4 h-4 ml-1" />
-                    </Link>
+                    Custom Wine Boxes
+                  </Link>
+                  <Link
+                    href="/wine-barrel-heads"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-amber-50 hover:text-amber-600"
+                  >
+                    Wine Barrel Heads
+                  </Link>
+                  <Link
+                    href="/cellar-door-signs"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-amber-50 hover:text-amber-600"
+                  >
+                    Cellar Door Signs
+                  </Link>
+                </div>
+              </div>
+            </div>
 
-                    {/* Dropdown Menu */}
-                    {((item.label === "Winery" && wineryDropdown) || (item.label === "Brewery" && breweryDropdown)) && (
-                      <div className="absolute top-full left-0 mt-1 w-56 bg-amber-900/95 backdrop-blur-md border border-white/20 rounded-md shadow-lg">
-                        {item.dropdown.map((subItem) => (
-                          <Link
-                            key={subItem.href}
-                            href={subItem.href}
-                            className={`block px-4 py-3 text-sm transition-colors hover:text-amber-300 hover:bg-white/10 first:rounded-t-md last:rounded-b-md ${
-                              pathname === subItem.href ? "text-amber-300 bg-white/10" : "text-white"
-                            }`}
-                          >
-                            {subItem.label}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                )
-              }
+            {/* Brewery Dropdown */}
+            <div className="relative group">
+              <button className="text-gray-700 hover:text-amber-600 px-3 py-2 text-sm font-medium transition-colors flex items-center">
+                Brewery
+                <ChevronDown className="ml-1 h-4 w-4" />
+              </button>
+              <div className="absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="py-1">
+                  <Link
+                    href="/microbrewery"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-amber-50 hover:text-amber-600"
+                  >
+                    Brewery Solutions
+                  </Link>
+                  <Link
+                    href="/brewery-tap-handles"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-amber-50 hover:text-amber-600"
+                  >
+                    Tap Handles
+                  </Link>
+                  <Link
+                    href="/growlers-glassware"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-amber-50 hover:text-amber-600"
+                  >
+                    Growlers & Glassware
+                  </Link>
+                  <Link
+                    href="/taproom-signage"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-amber-50 hover:text-amber-600"
+                  >
+                    Taproom Signage
+                  </Link>
+                </div>
+              </div>
+            </div>
 
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`text-sm font-medium transition-all duration-200 hover:text-amber-300 hover:bg-white/10 px-3 py-2 rounded-md text-shadow-sm ${
-                    pathname === item.href ? "text-amber-300 bg-white/10" : "text-white"
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              )
-            })}
-          </div>
-
-          {/* Desktop Actions */}
-          <div className="hidden md:flex items-center space-x-4">
-            <a href="tel:+12403247110">
-              <Button className="bg-amber-600 hover:bg-amber-700 text-white shadow-lg">
-                <Phone className="w-4 h-4 mr-2" />
-                Call Now
-              </Button>
-            </a>
+            <Link
+              href="/services"
+              className="text-gray-700 hover:text-amber-600 px-3 py-2 text-sm font-medium transition-colors"
+            >
+              Services
+            </Link>
+            <Link
+              href="/about"
+              className="text-gray-700 hover:text-amber-600 px-3 py-2 text-sm font-medium transition-colors"
+            >
+              About
+            </Link>
+            <Link
+              href="/contact"
+              className="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors"
+            >
+              Contact
+            </Link>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-white hover:text-amber-300 p-2">
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          <div className="md:hidden flex items-center">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-gray-700 hover:text-amber-600 focus:outline-none focus:text-amber-600"
+            >
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden bg-amber-900/95 backdrop-blur-md border-t border-white/10">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {navItems.map((item) => {
-                if (item.external) {
-                  return (
-                    <a
-                      key={item.href}
-                      href={item.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block px-3 py-2 text-base font-medium transition-colors hover:text-amber-300 hover:bg-white/10 rounded-md text-white"
-                      onClick={() => setIsOpen(false)}
+          <div className="md:hidden">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t">
+              <Link
+                href="/"
+                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-600 hover:bg-amber-50"
+              >
+                Home
+              </Link>
+
+              {/* Mobile Winery Dropdown */}
+              <div>
+                <button
+                  onClick={() => setWineryOpen(!wineryOpen)}
+                  className="w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-600 hover:bg-amber-50 flex items-center justify-between"
+                >
+                  Winery
+                  <ChevronDown className={`h-4 w-4 transform transition-transform ${wineryOpen ? "rotate-180" : ""}`} />
+                </button>
+                {wineryOpen && (
+                  <div className="pl-6 space-y-1">
+                    <Link
+                      href="/winery"
+                      className="block px-3 py-2 text-sm text-gray-600 hover:text-amber-600 hover:bg-amber-50"
                     >
-                      {item.label}
-                    </a>
-                  )
-                }
-
-                if (item.dropdown) {
-                  return (
-                    <div key={item.href}>
-                      <Link
-                        href={item.href}
-                        className={`block px-3 py-2 text-base font-medium transition-colors hover:text-amber-300 hover:bg-white/10 rounded-md ${
-                          pathname === item.href || item.dropdown.some((sub) => pathname === sub.href)
-                            ? "text-amber-300 bg-white/10"
-                            : "text-white"
-                        }`}
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {item.label}
-                      </Link>
-                      {item.dropdown.map((subItem) => (
-                        <Link
-                          key={subItem.href}
-                          href={subItem.href}
-                          className={`block px-6 py-2 text-sm font-medium transition-colors hover:text-amber-300 hover:bg-white/10 rounded-md ${
-                            pathname === subItem.href ? "text-amber-300 bg-white/10" : "text-gray-300"
-                          }`}
-                          onClick={() => setIsOpen(false)}
-                        >
-                          {subItem.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )
-                }
-
-                return (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className={`block px-3 py-2 text-base font-medium transition-colors hover:text-amber-300 hover:bg-white/10 rounded-md ${
-                      pathname === item.href ? "text-amber-300 bg-white/10" : "text-white"
-                    }`}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                )
-              })}
-
-              <div className="px-3 py-2">
-                <a href="tel:+12403247110">
-                  <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white">
-                    <Phone className="w-4 h-4 mr-2" />
-                    Call Now
-                  </Button>
-                </a>
+                      Winery Solutions
+                    </Link>
+                    <Link
+                      href="/custom-wine-boxes"
+                      className="block px-3 py-2 text-sm text-gray-600 hover:text-amber-600 hover:bg-amber-50"
+                    >
+                      Custom Wine Boxes
+                    </Link>
+                    <Link
+                      href="/wine-barrel-heads"
+                      className="block px-3 py-2 text-sm text-gray-600 hover:text-amber-600 hover:bg-amber-50"
+                    >
+                      Wine Barrel Heads
+                    </Link>
+                    <Link
+                      href="/cellar-door-signs"
+                      className="block px-3 py-2 text-sm text-gray-600 hover:text-amber-600 hover:bg-amber-50"
+                    >
+                      Cellar Door Signs
+                    </Link>
+                  </div>
+                )}
               </div>
+
+              {/* Mobile Brewery Dropdown */}
+              <div>
+                <button
+                  onClick={() => setBreweryOpen(!breweryOpen)}
+                  className="w-full text-left px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-600 hover:bg-amber-50 flex items-center justify-between"
+                >
+                  Brewery
+                  <ChevronDown
+                    className={`h-4 w-4 transform transition-transform ${breweryOpen ? "rotate-180" : ""}`}
+                  />
+                </button>
+                {breweryOpen && (
+                  <div className="pl-6 space-y-1">
+                    <Link
+                      href="/microbrewery"
+                      className="block px-3 py-2 text-sm text-gray-600 hover:text-amber-600 hover:bg-amber-50"
+                    >
+                      Brewery Solutions
+                    </Link>
+                    <Link
+                      href="/brewery-tap-handles"
+                      className="block px-3 py-2 text-sm text-gray-600 hover:text-amber-600 hover:bg-amber-50"
+                    >
+                      Tap Handles
+                    </Link>
+                    <Link
+                      href="/growlers-glassware"
+                      className="block px-3 py-2 text-sm text-gray-600 hover:text-amber-600 hover:bg-amber-50"
+                    >
+                      Growlers & Glassware
+                    </Link>
+                    <Link
+                      href="/taproom-signage"
+                      className="block px-3 py-2 text-sm text-gray-600 hover:text-amber-600 hover:bg-amber-50"
+                    >
+                      Taproom Signage
+                    </Link>
+                  </div>
+                )}
+              </div>
+
+              <Link
+                href="/services"
+                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-600 hover:bg-amber-50"
+              >
+                Services
+              </Link>
+              <Link
+                href="/about"
+                className="block px-3 py-2 text-base font-medium text-gray-700 hover:text-amber-600 hover:bg-amber-50"
+              >
+                About
+              </Link>
+              <Link
+                href="/contact"
+                className="block px-3 py-2 text-base font-medium bg-amber-600 text-white hover:bg-amber-700 rounded-md mx-3"
+              >
+                Contact
+              </Link>
             </div>
           </div>
         )}

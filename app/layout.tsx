@@ -9,11 +9,11 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" })
 
 export const metadata: Metadata = {
-  title: "Barrel & Vine Designs - Custom Laser Engraving | Washington, D.C. Metro",
+  title: "Barrel & Vine Designs - Custom Laser Engraving for Wineries & Breweries",
   description:
-    "Premium laser engraving services for wineries, breweries & distilleries in Washington DC, Maryland & Virginia. Custom wine boxes, tap handles, barrel heads & branded merchandise.",
+    "Premium laser engraving services for wineries and breweries in Washington DC, Maryland & Virginia. Custom wine boxes, tap handles, barrel heads, and more.",
   keywords:
-    "laser engraving Washington DC, custom wine barrel engraving, brewery merchandise Maryland, winery branding Virginia, tap handles DMV, wine box engraving, barrel head personalization",
+    "laser engraving, custom wine boxes, brewery tap handles, winery products, Washington DC, Maryland, Virginia",
   authors: [{ name: "Barrel & Vine Designs" }],
   creator: "Barrel & Vine Designs",
   publisher: "Barrel & Vine Designs",
@@ -23,15 +23,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://barrelvinedesigns.com",
     siteName: "Barrel & Vine Designs",
-    title: "Custom Laser Engraving for Wineries & Breweries | Barrel & Vine Designs",
+    title: "Barrel & Vine Designs - Custom Laser Engraving",
     description:
-      "Premium laser engraving services for wineries, breweries & distilleries in Washington DC, Maryland & Virginia. Custom wine boxes, tap handles, barrel heads & branded merchandise.",
+      "Premium laser engraving services for wineries and breweries in the DMV area. Custom products that enhance your brand.",
     images: [
       {
         url: "/images/hero-background.png",
         width: 1200,
         height: 630,
-        alt: "Barrel & Vine Designs - Custom Laser Engraving Services",
+        alt: "Barrel & Vine Designs",
       },
     ],
   },
@@ -147,7 +147,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#92400e" />
         <meta name="google-site-verification" content="your-verification-code-here" />
       </head>
-      <body className={`${inter.variable} ${playfair.variable} font-sans`}>
+      <body className={`${inter.variable} ${playfair.variable} font-sans antialiased`}>
         <Navigation />
         <main>{children}</main>
         <Footer />
