@@ -4,25 +4,25 @@ import Link from "next/link"
 import { ArrowRight, Check, Star, Phone, Package, Gift, Truck } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Custom Wine Accessories | Laser Engraved Bottle Openers & Wine Tools | Barrel & Vine Designs",
+  title: "Custom Wine Accessories | Barrel & Vine Designs",
   description:
-    "Premium custom wine accessories with laser engraving. Bottle openers, wine stoppers, corkscrews, and more. Perfect for wineries and wine events. Starting at $8. Washington D.C.",
+    "Branded wine accessories including custom engraved bottle openers, wine stoppers, and corkscrews. Perfect for winery gift shops and corporate gifts.",
   keywords:
     "custom wine accessories, laser engraved bottle openers, wine stoppers, corkscrews, winery merchandise, Washington DC",
 }
 
 const accessories = [
-  { name: "Corkscrews", image: "/images/wine-accessories.png" },
-  { name: "Wine Stoppers", image: "/images/winery-wine-accessories.png" },
-  { name: "Bottle Openers", image: "/images/brewery-bottle-opener.png" },
-  { name: "Aerators & Pourers", image: "/images/wine-accessories.png" },
-  { name: "Foil Cutters", image: "/images/winery-wine-accessories.png" },
-  { name: "Gift Sets", image: "/images/winery-luxury-gift-box.png" },
+  { name: "Bottle Openers", imgSrc: "/images/bottle-openers.png" },
+  { name: "Wine Stoppers", imgSrc: "/images/winery-wine-accessories.png" },
+  { name: "Corkscrews", imgSrc: "/images/wine-accessories.png" },
+  { name: "Bottle Tags", imgSrc: "/images/winery-bottle-tags.png" },
+  { name: "Wine Glasses", imgSrc: "/images/winery-wine-glasses.png" },
+  { name: "Event Tokens", imgSrc: "/images/winery-event-tokens.png" },
 ]
 
 export default function WineAccessories() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
       <section className="bg-gray-800 text-white py-24 sm:py-32 text-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -30,7 +30,8 @@ export default function WineAccessories() {
             Branded Wine Accessories
           </h1>
           <p className="mt-4 text-lg sm:text-xl max-w-3xl mx-auto text-gray-300">
-            Complete your winery's experience with custom-engraved accessories that customers will love and use.
+            Extend your brand's reach with a full suite of custom-engraved wine accessories. Ideal for retail, tasting
+            room up-sells, wine club gifts, and special events.
           </p>
           <Link
             href="/contact"
@@ -55,7 +56,7 @@ export default function WineAccessories() {
               <div key={item.name} className="group relative">
                 <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-200">
                   <Image
-                    src={item.image || "/placeholder.svg"}
+                    src={item.imgSrc || "/placeholder.svg"}
                     alt={item.name}
                     fill
                     style={{ objectFit: "cover" }}

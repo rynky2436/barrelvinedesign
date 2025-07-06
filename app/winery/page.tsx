@@ -1,158 +1,128 @@
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, CheckCircle } from "lucide-react"
+import { ArrowRight } from "lucide-react"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Winery Solutions | Barrel & Vine Designs",
+  description:
+    "Comprehensive laser engraving solutions for wineries. We create custom wine boxes, barrel heads, cellar signs, tasting boards, and more to enhance your brand.",
+}
 
 const services = [
   {
     title: "Custom Wine Boxes",
     description:
-      "Elegant wooden wine boxes with personalized laser engraving, perfect for gifts and premium packaging.",
-    imageUrl: "/images/winery-custom-wine-box.png",
-    link: "/custom-wine-boxes",
+      "Create unforgettable gifts and packaging with bespoke wooden wine boxes, engraved with your winery’s logo and branding.",
+    href: "/custom-wine-boxes",
+    imgSrc: "/images/winery-custom-wine-box.png",
   },
   {
     title: "Wine Barrel Heads",
     description:
-      "Transform authentic wine barrel heads into stunning, personalized decorative pieces for your winery or home.",
-    imageUrl: "/images/winery-barrel-head.png",
-    link: "/wine-barrel-heads",
+      "Turn authentic barrel heads into stunning, personalized decor for your tasting room or as high-value auction items.",
+    href: "/wine-barrel-heads",
+    imgSrc: "/images/winery-barrel-head.png",
   },
   {
     title: "Cellar Door Signs",
     description:
-      "Welcome guests with beautifully crafted, custom-engraved signs for your cellar door, tasting room, or vineyard.",
-    imageUrl: "/images/winery-cellar-door-sign.png",
-    link: "/cellar-door-signs",
+      "Guide your guests with elegant, custom-engraved wooden signage that reflects the quality and character of your winery.",
+    href: "/cellar-door-signs",
+    imgSrc: "/images/winery-cellar-door-sign.png",
   },
   {
     title: "Tasting Boards",
     description: "Enhance your wine tasting experience with custom engraved tasting boards and serving platters.",
-    imageUrl: "/images/winery-tasting-boards.png",
-    link: "/tasting-boards",
+    href: "/tasting-boards",
+    imgSrc: "/images/winery-tasting-boards.png",
   },
   {
     title: "Wine Accessories",
     description: "Complete your wine service with custom bottle openers, wine stoppers, and other branded accessories.",
-    imageUrl: "/images/winery-wine-accessories.png",
-    link: "/wine-accessories",
+    href: "/wine-accessories",
+    imgSrc: "/images/winery-wine-accessories.png",
   },
   {
     title: "Charcuterie Tools",
     description: "Elevate your wine and cheese pairings with custom engraved charcuterie knives and serving tools.",
-    imageUrl: "/images/winery-charcuterie-tools.png",
-    link: "/charcuterie-tools",
+    href: "/charcuterie-tools",
+    imgSrc: "/images/winery-charcuterie-tools.png",
   },
 ]
 
-const benefits = [
-  "Elevate Brand Perception",
-  "Increase Customer Loyalty",
-  "Create Memorable Experiences",
-  "Boost Retail Sales",
-  "Enhance Tasting Room Ambiance",
-  "Perfect for Corporate Gifting",
-]
-
-export default function WinerySolutionsPage() {
+export default function WineryPage() {
   return (
     <div className="bg-gray-50">
-      <section className="relative bg-gray-800 text-white py-20 md:py-32">
+      {/* Hero Section */}
+      <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center text-white">
         <Image
           src="/images/winery-solutions.png"
-          alt="Elegant winery setup with custom engraved products"
-          fill
-          style={{ objectFit: "cover" }}
-          className="opacity-30"
-          priority
+          alt="Elegant winery tasting room"
+          layout="fill"
+          objectFit="cover"
+          className="z-0"
         />
-        <div className="container mx-auto px-4 relative z-10 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold font-serif">Winery Solutions</h1>
-          <p className="mt-4 text-lg md:text-xl max-w-3xl mx-auto">
-            Crafting bespoke laser-engraved products that tell your winery's unique story.
-          </p>
-          <Link
-            href="/contact"
-            className="mt-8 inline-block bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-lg transition-colors"
-          >
-            Get a Free Consultation
-          </Link>
+        <div className="absolute inset-0 bg-black/50 z-10" />
+        <div className="relative z-20 text-center px-4">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight">Winery Solutions</h1>
+          <p className="mt-4 max-w-2xl mx-auto text-lg md:text-xl">Elevate Your Brand with Custom Laser Engraving</p>
         </div>
       </section>
 
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 font-serif">
-              Our Engraving Services for Wineries
-            </h2>
-            <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-              From the cellar to the tasting room, we provide a full suite of custom products to enhance your brand.
+      {/* Services Section */}
+      <section className="py-16 sm:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our Winery Services</h2>
+            <p className="mt-4 max-w-2xl mx-auto text-lg text-gray-600">
+              From the cellar to the tasting room, we provide bespoke engraved products that tell your story.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
-              <div
+              <Link
+                href={service.href}
                 key={service.title}
-                className="bg-white rounded-lg shadow-lg overflow-hidden group transform hover:-translate-y-2 transition-transform duration-300"
+                className="group block bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden"
               >
                 <div className="relative h-56">
                   <Image
-                    src={service.imageUrl || "/placeholder.svg"}
+                    src={service.imgSrc || "/placeholder.svg"}
                     alt={service.title}
-                    fill
-                    style={{ objectFit: "cover" }}
+                    layout="fill"
+                    objectFit="cover"
                   />
                 </div>
-                <div className="p-6 flex flex-col">
-                  <h3 className="text-xl font-bold text-gray-900 font-serif">{service.title}</h3>
-                  <p className="mt-2 text-gray-600 flex-grow">{service.description}</p>
-                  <Link
-                    href={service.link}
-                    className="mt-4 inline-flex items-center text-amber-600 font-semibold hover:text-amber-700 self-start"
-                  >
-                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
+                <div className="p-6">
+                  <h3 className="text-xl font-semibold text-gray-900">{service.title}</h3>
+                  <p className="mt-2 text-gray-600">{service.description}</p>
+                  <div className="mt-4 inline-flex items-center text-amber-700 font-semibold group-hover:text-amber-800">
+                    Learn More{" "}
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 font-serif">The Barrel & Vine Advantage</h2>
-            <p className="mt-4 text-lg text-gray-600">Partner with us to unlock tangible benefits for your winery.</p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {benefits.map((benefit) => (
-              <div key={benefit} className="flex items-start space-x-4">
-                <div className="flex-shrink-0">
-                  <CheckCircle className="h-8 w-8 text-green-500 mt-1" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-900">{benefit}</h3>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-amber-700 text-white">
-        <div className="container mx-auto px-4 py-16 text-center">
-          <h2 className="text-3xl font-bold font-serif">Ready to Elevate Your Brand?</h2>
-          <p className="mt-4 max-w-2xl mx-auto">
-            Let's discuss how our custom laser engraving can bring your vision to life. Contact us today for a
-            personalized quote and design mock-up.
+      {/* Contact CTA */}
+      <section className="bg-amber-800">
+        <div className="container mx-auto py-16 px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold text-white">Ready to Enhance Your Winery?</h2>
+          <p className="mt-4 text-lg text-amber-100">
+            Let's discuss your project. We serve wineries across DC, Maryland, and Virginia.
           </p>
-          <Link
-            href="/contact"
-            className="mt-8 inline-block bg-white hover:bg-gray-100 text-amber-700 font-bold py-3 px-8 rounded-lg transition-colors"
-          >
-            Start Your Project
-          </Link>
+          <div className="mt-8">
+            <Link
+              href="/contact"
+              className="inline-block bg-white text-amber-800 font-bold py-3 px-8 rounded-md hover:bg-amber-50 transition-colors"
+            >
+              Get a Free Quote
+            </Link>
+          </div>
         </div>
       </section>
     </div>

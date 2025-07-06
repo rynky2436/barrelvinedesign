@@ -1,6 +1,5 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Facebook, Instagram, Linkedin } from "lucide-react"
 
 const wineryLinks = [
   { href: "/winery", label: "Winery Solutions" },
@@ -22,73 +21,50 @@ const breweryLinks = [
 export default function Footer() {
   return (
     <footer className="bg-gray-800 text-white">
-      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           <div className="col-span-2 md:col-span-1">
-            <div className="flex items-center space-x-2 mb-4">
-              <Image src="/images/barrel-vine-logo.png" alt="Barrel & Vine Logo" width={30} height={30} />
-              <span className="text-lg font-bold font-serif">Barrel & Vine</span>
-            </div>
-            <p className="text-gray-400 text-sm">
-              Crafting bespoke laser-engraved products for wineries and breweries across the Mid-Atlantic.
+            <Link href="/" className="flex items-center space-x-2">
+              <Image
+                src="/images/barrel-vine-logo.png"
+                alt="Barrel & Vine Designs Logo"
+                width={50}
+                height={50}
+                className="bg-white rounded-full p-1"
+              />
+              <span className="font-bold text-xl">Barrel & Vine</span>
+            </Link>
+            <p className="mt-4 text-gray-400 text-sm">
+              Premium laser engraved products for wineries and breweries in the DC, Maryland, and Virginia area.
             </p>
-            <div className="flex space-x-4 mt-6">
-              <a href="#" className="text-gray-400 hover:text-white">
-                <Facebook size={20} />
+            <p className="mt-4 text-gray-400 text-sm">
+              <a href="tel:240-324-7110" className="hover:text-white">
+                240-324-7110
               </a>
-              <a href="#" className="text-gray-400 hover:text-white">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white">
-                <Linkedin size={20} />
-              </a>
-            </div>
+            </p>
           </div>
-
           <div>
-            <h3 className="text-sm font-semibold text-gray-300 tracking-wider uppercase">Winery Services</h3>
+            <h3 className="text-sm font-semibold tracking-wider uppercase">Winery Services</h3>
             <ul className="mt-4 space-y-2">
               {wineryLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-gray-400 hover:text-white transition-colors">
+                  <Link href={link.href} className="text-sm text-gray-400 hover:text-white">
                     {link.label}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
-
           <div>
-            <h3 className="text-sm font-semibold text-gray-300 tracking-wider uppercase">Brewery Services</h3>
+            <h3 className="text-sm font-semibold tracking-wider uppercase">Brewery Services</h3>
             <ul className="mt-4 space-y-2">
               {breweryLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-gray-400 hover:text-white transition-colors">
+                  <Link href={link.href} className="text-sm text-gray-400 hover:text-white">
                     {link.label}
                   </Link>
                 </li>
               ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold text-gray-300 tracking-wider uppercase">Company</h3>
-            <ul className="mt-4 space-y-2">
-              <li>
-                <Link href="/about" className="text-sm text-gray-400 hover:text-white">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-sm text-gray-400 hover:text-white">
-                  Contact
-                </Link>
-              </li>
-              <li>
-                <Link href="/laser-engraving-washington-dc" className="text-sm text-gray-400 hover:text-white">
-                  Service Areas
-                </Link>
-              </li>
             </ul>
           </div>
         </div>

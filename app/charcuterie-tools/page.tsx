@@ -4,9 +4,9 @@ import Link from "next/link"
 import { ArrowRight, Check, Phone, Award, Heart, Shield, Sparkles, Leaf, ShieldCheck } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Custom Charcuterie Tools | Laser Engraved Cheese Boards & Knives | Barrel & Vine Designs",
+  title: "Engraved Charcuterie Boards & Tools | Barrel & Vine Designs",
   description:
-    "Premium custom charcuterie tools with laser engraving. Cheese boards, knives, serving utensils, and more. Perfect for wineries and gourmet events. Starting at $12. Washington D.C.",
+    "Complete your wine and cheese pairings with custom engraved charcuterie boards, cheese knives, and serving tools.",
   keywords:
     "custom charcuterie tools, laser engraved cheese boards, charcuterie knives, serving utensils, wine pairing tools, Washington DC",
 }
@@ -20,37 +20,41 @@ const tools = [
   { name: "Complete Tool Sets", description: "Curated sets for the ultimate serving experience." },
 ]
 
-export default function CharcuterieTools() {
+export default function CharcuterieToolsPage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative py-24 sm:py-32">
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="max-w-xl">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold font-serif text-gray-900">
-              Engraved Charcuterie Tools
-            </h1>
-            <p className="mt-4 text-lg sm:text-xl text-gray-700">
-              Elevate your wine and cheese pairings with custom-branded charcuterie tools that exude sophistication.
-            </p>
-            <Link
-              href="/contact"
-              className="mt-8 inline-block bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-8 rounded-lg transition-colors"
-            >
-              Create Your Custom Set
-            </Link>
-          </div>
+      <div className="relative h-96">
+        <Image
+          src="/images/winery-charcuterie-tools.png"
+          alt="A spread of charcuterie tools and a board"
+          fill
+          objectFit="cover"
+        />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative h-full flex flex-col justify-center items-center text-white text-center px-4">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight">Charcuterie Boards & Tools</h1>
+          <p className="mt-4 max-w-2xl text-lg">The perfect complement to your finest wines.</p>
         </div>
-        <div className="absolute top-0 right-0 h-full w-1/2 hidden lg:block">
-          <Image
-            src="/images/charcuterie-knives.png"
-            alt="A set of custom engraved charcuterie tools"
-            fill
-            style={{ objectFit: "cover" }}
-            className="rounded-bl-full"
-          />
+      </div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-gray-900">Elevate Every Pairing</h2>
+          <p className="mt-4 text-lg text-gray-600">
+            Offer your guests a complete sensory experience. Our custom-engraved charcuterie boards, cheese knives, and
+            serving sets are crafted from premium materials, providing the perfect canvas for your curated food and wine
+            pairings.
+          </p>
         </div>
-      </section>
+        <div className="mt-12 text-center">
+          <Link
+            href="/contact"
+            className="inline-block bg-amber-800 text-white font-bold py-3 px-8 rounded-md hover:bg-amber-900 transition-colors"
+          >
+            Design Your Set
+          </Link>
+        </div>
+      </div>
 
       {/* Tools Grid */}
       <main className="py-16 sm:py-24">
