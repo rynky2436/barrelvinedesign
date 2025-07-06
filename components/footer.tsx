@@ -1,75 +1,105 @@
 import Link from "next/link"
 import Image from "next/image"
+import { Phone, Mail, Clock } from "lucide-react"
 
-const wineryLinks = [
-  { href: "/winery", label: "Winery Solutions" },
-  { href: "/custom-wine-boxes", label: "Custom Wine Boxes" },
-  { href: "/wine-barrel-heads", label: "Wine Barrel Heads" },
-  { href: "/cellar-door-signs", label: "Cellar Door Signs" },
-  { href: "/tasting-boards", label: "Tasting Boards" },
-  { href: "/wine-accessories", label: "Wine Accessories" },
-  { href: "/charcuterie-tools", label: "Charcuterie Tools" },
-]
-
-const breweryLinks = [
-  { href: "/microbrewery", label: "Brewery Solutions" },
-  { href: "/brewery-tap-handles", label: "Tap Handles" },
-  { href: "/growlers-glassware", label: "Growlers & Glassware" },
-  { href: "/taproom-signage", label: "Taproom Signage" },
-]
-
-export default function Footer() {
+export function Footer() {
   return (
-    <footer className="bg-gray-800 text-white">
-      <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div className="col-span-2 md:col-span-1">
-            <Link href="/" className="flex items-center space-x-2">
+    <footer className="bg-stone-900 text-white">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Company Info */}
+          <div className="lg:col-span-2">
+            <div className="flex items-center space-x-3 mb-6">
               <Image
                 src="/images/barrel-vine-logo.png"
                 alt="Barrel & Vine Designs Logo"
-                width={50}
-                height={50}
-                className="bg-white rounded-full p-1"
+                width={64}
+                height={64}
+                className="filter brightness-0 invert"
               />
-              <span className="font-bold text-xl">Barrel & Vine</span>
-            </Link>
-            <p className="mt-4 text-gray-400 text-sm">
-              Premium laser engraved products for wineries and breweries in the DC, Maryland, and Virginia area.
+              <div>
+                <h3 className="text-2xl font-bold font-playfair text-amber-300">Barrel & Vine Designs</h3>
+                <p className="text-amber-200">Custom Laser Engraving Excellence</p>
+              </div>
+            </div>
+            <p className="text-stone-300 mb-6 leading-relaxed max-w-md">
+              Serving wineries and craft breweries across Maryland, Virginia, and Washington, D.C. with bespoke laser
+              engraving services that honor your brand's commitment to excellence.
             </p>
-            <p className="mt-4 text-gray-400 text-sm">
-              <a href="tel:240-324-7110" className="hover:text-white">
-                240-324-7110
-              </a>
-            </p>
+            <div className="flex space-x-4">
+              <div className="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center">
+                <span className="text-white font-bold text-sm">DC</span>
+              </div>
+              <div className="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center">
+                <span className="text-white font-bold text-sm">MD</span>
+              </div>
+              <div className="w-10 h-10 bg-amber-600 rounded-full flex items-center justify-center">
+                <span className="text-white font-bold text-sm">VA</span>
+              </div>
+            </div>
           </div>
+
+          {/* Quick Links */}
           <div>
-            <h3 className="text-sm font-semibold tracking-wider uppercase">Winery Services</h3>
-            <ul className="mt-4 space-y-2">
-              {wineryLinks.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-gray-400 hover:text-white">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
+            <h4 className="text-lg font-bold text-amber-300 mb-4 font-playfair">Services</h4>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/winery" className="text-stone-300 hover:text-amber-300 transition-colors">
+                  Winery Solutions
+                </Link>
+              </li>
+              <li>
+                <Link href="/microbrewery" className="text-stone-300 hover:text-amber-300 transition-colors">
+                  Brewery Merchandise
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className="text-stone-300 hover:text-amber-300 transition-colors">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-stone-300 hover:text-amber-300 transition-colors">
+                  Get Started
+                </Link>
+              </li>
             </ul>
           </div>
+
+          {/* Contact Info */}
           <div>
-            <h3 className="text-sm font-semibold tracking-wider uppercase">Brewery Services</h3>
-            <ul className="mt-4 space-y-2">
-              {breweryLinks.map((link) => (
-                <li key={link.href}>
-                  <Link href={link.href} className="text-sm text-gray-400 hover:text-white">
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <h4 className="text-lg font-bold text-amber-300 mb-4 font-playfair">Contact</h4>
+            <div className="space-y-3">
+              <div className="flex items-center">
+                <Phone className="w-4 h-4 text-amber-400 mr-3 flex-shrink-0" />
+                <span className="text-stone-300">(301) 748-8360</span>
+              </div>
+              <div className="flex items-center">
+                <Mail className="w-4 h-4 text-amber-400 mr-3 flex-shrink-0" />
+                <span className="text-stone-300">info@example.com</span>
+              </div>
+              <div className="flex items-center">
+                <Clock className="w-4 h-4 text-amber-400 mr-3 flex-shrink-0" />
+                <div className="text-stone-300">
+                  <div>Mon-Fri: 9AM-6PM</div>
+                  <div>Sat: 10AM-4PM</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="mt-8 border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Barrel & Vine Designs. All rights reserved.</p>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-stone-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-stone-400 text-sm">© 2024 Barrel & Vine Designs. All rights reserved.</p>
+          <div className="flex space-x-6 mt-4 md:mt-0">
+            <Link href="/privacy" className="text-stone-400 hover:text-amber-300 text-sm transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="text-stone-400 hover:text-amber-300 text-sm transition-colors">
+              Terms of Service
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

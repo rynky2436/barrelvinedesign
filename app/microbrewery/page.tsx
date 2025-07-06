@@ -26,7 +26,7 @@ const brewerySchema = {
   "@type": "Service",
   name: "Microbrewery Laser Engraving Services",
   description:
-    "Custom laser engraving services for craft breweries including tap handles, growlers, and taproom merchandise",
+    "Custom laser engraving services for craft breweries including tap handles, growlers, and taproom merchandise.",
   provider: {
     "@type": "LocalBusiness",
     name: "Barrel & Vine Designs",
@@ -37,12 +37,12 @@ const brewerySchema = {
     {
       "@type": "Offer",
       name: "Custom Tap Handles",
-      description: "Distinctive wooden tap handles with laser-engraved brewery logos and beer names",
+      description: "Distinctive wooden tap handles with laser-engraved brewery logos and beer names.",
     },
     {
       "@type": "Offer",
       name: "Branded Growlers",
-      description: "Custom laser-engraved growlers and glassware for take-home beer sales",
+      description: "Custom laser-engraved growlers and glassware for take-home beer sales.",
     },
   ],
 }

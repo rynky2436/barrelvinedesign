@@ -1,147 +1,130 @@
 "use client"
 
-import type React from "react"
-
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
-import { ChevronDown, Menu, X } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Menu, X, Phone } from "lucide-react"
 
-const wineryLinks = [
-  { href: "/winery", label: "Winery Solutions" },
-  { href: "/custom-wine-boxes", label: "Custom Wine Boxes" },
-  { href: "/wine-barrel-heads", label: "Wine Barrel Heads" },
-  { href: "/cellar-door-signs", label: "Cellar Door Signs" },
-  { href: "/tasting-boards", label: "Tasting Boards" },
-  { href: "/wine-accessories", label: "Wine Accessories" },
-  { href: "/charcuterie-tools", label: "Charcuterie Tools" },
-]
-
-const breweryLinks = [
-  { href: "/microbrewery", label: "Brewery Solutions" },
-  { href: "/brewery-tap-handles", label: "Tap Handles" },
-  { href: "/growlers-glassware", label: "Growlers & Glassware" },
-  { href: "/taproom-signage", label: "Taproom Signage" },
-]
-
-export default function Navigation() {
+export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
 
-  const isWineryPage = wineryLinks.some((link) => pathname.startsWith(link.href))
-  const isBreweryPage = breweryLinks.some((link) => pathname.startsWith(link.href))
-
-  const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
-    <Link
-      href={href}
-      className={`px-4 py-2 rounded-md text-sm font-medium ${pathname === href ? "text-amber-900 bg-amber-100" : "text-gray-700 hover:bg-gray-100"}`}
-    >
-      {children}
-    </Link>
-  )
-
-  const DropdownLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
-    <Link
-      href={href}
-      className={`block px-4 py-2 text-sm ${pathname === href ? "text-amber-900 bg-amber-50" : "text-gray-700 hover:bg-gray-100"}`}
-      onClick={() => setIsOpen(false)}
-    >
-      {children}
-    </Link>
-  )
+  const navItems = [
+    { href: "/", label: "Home" },
+    { href: "/about", label: "About Us" },
+    { href: "/contact", label: "Get Started" },
+    { href: "https://hubcitylaser.com", label: "General Laser Engraving", external: true },
+  ]
 
   return (
-    <header className="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex-shrink-0">
-            <Link href="/" className="flex items-center space-x-2">
-              <Image src="/images/barrel-vine-logo.png" alt="Barrel & Vine Designs Logo" width={40} height={40} />
-              <span className="font-bold text-xl text-gray-800">Barrel & Vine</span>
-            </Link>
-          </div>
+    <nav className="fixed top-0 w-full z-50 bg-white/10 backdrop-blur-md border-b border-white/20 shadow-lg transition-all duration-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20">
+          {/* Logo */}
+          <Link href="/" className="flex items-center space-x-3">
+            <Image
+              src="/images/barrel-vine-logo.png"
+              alt="Barrel & Vine Designs Logo"
+              width={48}
+              height={48}
+              className="filter brightness-0 invert drop-shadow-md"
+            />
+            <div className="flex flex-col">
+              <span className="text-xl font-bold text-white font-playfair text-shadow-md">Barrel & Vine Designs</span>
+              <span className="text-xs text-amber-300 -mt-1 text-shadow-sm">Laser Engraving Excellence</span>
+            </div>
+          </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-1 h-full">
-            <div className="relative group h-full flex items-center">
-              <button
-                className={`inline-flex items-center px-3 py-2 text-sm font-medium ${isWineryPage ? "text-amber-900" : "text-gray-700"} hover:text-amber-900`}
-              >
-                <span>Winery</span>
-                <ChevronDown className="ml-1 h-4 w-4" />
-              </button>
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-0 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out pointer-events-none group-hover:pointer-events-auto">
-                <div className="py-1">
-                  {wineryLinks.map((link) => (
-                    <DropdownLink key={link.href} href={link.href}>
-                      {link.label}
-                    </DropdownLink>
-                  ))}
-                </div>
-              </div>
-            </div>
-            <div className="relative group h-full flex items-center">
-              <button
-                className={`inline-flex items-center px-3 py-2 text-sm font-medium ${isBreweryPage ? "text-amber-900" : "text-gray-700"} hover:text-amber-900`}
-              >
-                <span>Brewery</span>
-                <ChevronDown className="ml-1 h-4 w-4" />
-              </button>
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-0 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in-out pointer-events-none group-hover:pointer-events-auto">
-                <div className="py-1">
-                  {breweryLinks.map((link) => (
-                    <DropdownLink key={link.href} href={link.href}>
-                      {link.label}
-                    </DropdownLink>
-                  ))}
-                </div>
-              </div>
-            </div>
-            <NavLink href="/about">About</NavLink>
-            <NavLink href="/contact">Contact</NavLink>
-          </nav>
+          <div className="hidden md:flex items-center space-x-8">
+            {navItems.map((item) =>
+              item.external ? (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  target="_blank" // Open in new tab
+                  rel="noopener noreferrer" // Security best practice
+                  className="text-sm font-medium transition-all duration-200 hover:text-amber-300 hover:bg-white/10 px-3 py-2 rounded-md text-shadow-sm text-white"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`text-sm font-medium transition-all duration-200 hover:text-amber-300 hover:bg-white/10 px-3 py-2 rounded-md text-shadow-sm ${
+                    pathname === item.href ? "text-amber-300 bg-white/10" : "text-white"
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              ),
+            )}
+          </div>
 
-          {/* Mobile Menu Button */}
+          {/* Desktop Actions */}
+          <div className="hidden md:flex items-center space-x-4">
+            {/* Call Now Button */}
+            <a href="tel:+13017488360">
+              <Button className="bg-amber-600 hover:bg-amber-700 text-white shadow-lg">
+                <Phone className="w-4 h-4 mr-2" />
+                Call Now
+              </Button>
+            </a>
+          </div>
+
+          {/* Mobile menu button */}
           <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-amber-500"
-            >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            <button onClick={() => setIsOpen(!isOpen)} className="text-white hover:text-amber-300 p-2">
+              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
-      </div>
 
-      {/* Mobile Navigation */}
-      {isOpen && (
-        <div className="md:hidden">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <div className="space-y-1">
-              <h3 className="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">Winery</h3>
-              {wineryLinks.map((link) => (
-                <DropdownLink key={link.href} href={link.href}>
-                  {link.label}
-                </DropdownLink>
-              ))}
-            </div>
-            <div className="space-y-1 pt-2">
-              <h3 className="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">Brewery</h3>
-              {breweryLinks.map((link) => (
-                <DropdownLink key={link.href} href={link.href}>
-                  {link.label}
-                </DropdownLink>
-              ))}
-            </div>
-            <div className="space-y-1 pt-2">
-              <h3 className="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider">Company</h3>
-              <DropdownLink href="/about">About</DropdownLink>
-              <DropdownLink href="/contact">Contact</DropdownLink>
+        {/* Mobile Navigation */}
+        {isOpen && (
+          <div className="md:hidden bg-amber-900/95 backdrop-blur-md border-t border-white/10">
+            <div className="px-2 pt-2 pb-3 space-y-1">
+              {navItems.map((item) =>
+                item.external ? (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-3 py-2 text-base font-medium transition-colors hover:text-amber-300 hover:bg-white/10 rounded-md text-white"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={`block px-3 py-2 text-base font-medium transition-colors hover:text-amber-300 hover:bg-white/10 rounded-md ${
+                      pathname === item.href ? "text-amber-300 bg-white/10" : "text-white"
+                    }`}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.label}
+                  </Link>
+                ),
+              )}
+
+              <div className="px-3 py-2">
+                <a href="tel:+13017488360">
+                  <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white">
+                    <Phone className="w-4 h-4 mr-2" />
+                    Call Now
+                  </Button>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-      )}
-    </header>
+        )}
+      </div>
+    </nav>
   )
 }
