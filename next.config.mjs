@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'standalone', // Ensures Next.js builds for a Node.js server environment
   eslint: {
     ignoreDuringBuilds: true,
   },
