@@ -107,7 +107,7 @@ const jsonLd = {
         itemOffered: {
           "@type": "Service",
           name: "Brewery Tap Handles",
-          description: "Custom laser-engraved tap handles for craft breweries.",
+          description: "Distinctive wooden tap handles with laser-engraved brewery logos and beer names.",
         },
       },
       {
