@@ -19,7 +19,7 @@ const nextConfig = {
   poweredByHeader: false,
   generateEtags: false,
   experimental: {
-    optimizeCss: true,
+    optimizeCss: true, // This enables CSS optimization which uses 'critters'
   },
   async headers() {
     return [
